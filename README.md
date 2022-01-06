@@ -1,24 +1,33 @@
-# README
+# <machibura>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+<街ブラ記録、共有サイトです。>
 
-Things you may want to cover:
+### サイトテーマ
+<街ブラの記録（思い出）を共有したり、参考にしたりする。>
 
-* Ruby version
+### テーマを選んだ理由
+<様々な方の街の見方、感じ方を手軽に記録、共有できるコンテンツがあれば良いと思い着手しました。  人や時によってその街での目的、行きたい場所、街の歩き方、感じ方等様々だと思います。  そんなひと時の街ブラの思い出を記録したり、共有したりし、また、様々な方の視点からその街の新たな魅力を知るきっかけになれば幸いです。>
 
-* System dependencies
+### ターゲットユーザ
+<その街（投稿する街）に行ったことがある方、その街（投稿されている街）について興味のある方>
 
-* Configuration
+### 主な利用シーン
+<その街（投稿する街）に行った後、その街（投稿されている街）について知りたいとき>
 
-* Database creation
+<!--## 設計書-->
+<!--<...>-->
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1En_dbISnh-48dVaYah3ejAr1mbNQVNDRWz2SvsMk52g/edit?usp=sharing>
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<!--## 使用素材-->
+<!--- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。-->
+<!--- 使用しない場合は、使用素材の項目をREADMEから削除してください。-->
