@@ -1,4 +1,4 @@
-# machibura
+# <machibura>
 
 ## サイト概要
 街ブラ記録、共有サイトです。
