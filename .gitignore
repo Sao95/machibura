@@ -29,3 +29,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+; .envファイルに記載したデータベースの情報がGitで管理されなくなる
+/.env
