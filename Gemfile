@@ -68,3 +68,6 @@ group :production do
   # MySQLを利用するために必要
   gem 'mysql2'
 end
+
+# ユーザ認証機能
+gem 'devise'
