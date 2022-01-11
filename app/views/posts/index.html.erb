@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+<div>
+  <%= attachment_image_tag post, :image %>
+  <p> 投稿文</p>
+  <div><%= post.writings %></div>
+  <p>ユーザーネーム</p>
+  <div><%= post.user.name %></div>
+  <%= link_to "詳細",  post_path(post.id) %>
+</div>
+<% end %>

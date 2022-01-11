@@ -71,3 +71,8 @@ end
 
 # ユーザ認証機能
 gem 'devise'
+
+# ファイルをアップロードできるようにする
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+# アップロードした画像のリサイズを行える
+gem "refile-mini_magick"

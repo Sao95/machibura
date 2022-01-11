@@ -1,0 +1,12 @@
+<div>
+  <%= attachment_image_tag @post, :image %>
+  <p> 投稿文</p>
+  <p><%= @post.writings%></p>
+  <p>ユーザーネーム</p>
+  <p><%= @post.user.name %></p>
+  <p>投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
+  <% if @post.user == current_user %>
+    <%= link_to "編集", edit_post_path(@post) %>
+    <%= link_to "削除", post_path(@post), method: :delete %>
+  <% end %>
+</div>
