@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <p class="text-left">
+    <%= link_to '投稿フォーム', new_post_path %>
+  </p>
+<% else %>
+  <p class="text-left">
+    <%= link_to '投稿フォーム', new_post_path %>
+  </p>
+<% end %>

@@ -76,3 +76,10 @@ gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 # アップロードした画像のリサイズを行える
 gem "refile-mini_magick"
+
+# Bootstrap
+gem 'bootstrap', '~> 4.5'
+# BootstrapはjQueryというライブラリに依存している
+gem 'jquery-rails'
+# fontawesome
+gem 'font-awesome-sass', '~> 5.13'
