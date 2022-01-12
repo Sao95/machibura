@@ -1,0 +1,19 @@
+<div>
+<p>コメント件数：<%= @user.post_comments.count %></p>
+<% @user.post_comments.each do |post_comment| %>
+  <%= post_comment.post.image %>
+  <p> 地名</p>
+  <div><%= post_comment.post.place %></div>
+  <p> 駅名</p>
+  <div><%= post_comment.post.station %></div>
+  <p> 投稿文</p>
+  <div><%= post_comment.post.writings %></div>
+  <p>ユーザーネーム</p>
+  <div><%= post_comment.post.user.name %></div>
+  <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+  <div>
+    <%#= link_to "編集", edit_user_post_comment_path(post_comment.user, post_comment) %>
+    <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+  </div>
+<% end %>
+</div>
