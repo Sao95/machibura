@@ -9,7 +9,8 @@
   <div><%= post.writings %></div>
   <p>ユーザーネーム</p>
   <div><%= post.user.name %></div>
-  <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+  <p>コメント件数：<%= post.post_comments.count %></p>
+  <p>お気に入り件数：<%= post.favorites.count %></p>
   <%= link_to "詳細",  post_path(post.id) %>
 </div>
 <% end %>

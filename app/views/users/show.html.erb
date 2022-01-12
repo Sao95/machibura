@@ -2,7 +2,8 @@
 <h3><%= @user.name %></h3>
 </div>
 
-<%= link_to "コメント履歴",  user_post_comments_path(@user.id) %>
+<%= link_to "コメント履歴",  user_post_comments_path(@user) %>
+<%= link_to "お気に入り履歴",  user_favorites_path(@user) %>
 
 <% @posts.each do |post| %>
 <div>

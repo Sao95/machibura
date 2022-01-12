@@ -17,17 +17,16 @@ class PostCommentsController < ApplicationController
     @user = current_user
   end
 
-  # def edit
-  #   @user = current_user
-  #   @post_comment = PostComment.find(params[:id])
-  # end
+  def edit
+    @post_comment = PostComment.find(params[:id])
+  end
 
-  # def update
-  #   @post_comment = PostComment.find(params[:id])
-  #   @user = current_user
-  #   @post_comment.update(post_comment_params)
-  #   redirect_to user_post_comments_path(@user)
-  # end
+  def update
+    @post_comment = PostComment.find(params[:id])
+    user = current_user
+    @post_comment.update!(post_comment_params)
+    redirect_to user_post_comments_path(user)
+  end
 
   private
 

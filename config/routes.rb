@@ -10,16 +10,16 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :edit, :update] do
     resources :post_comments, only: [:index]
-    resource :favorites, only: [:index, :destroy]
+    resources :favorites, only: [:index]
   end
   get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
   
   resources :posts do
     resources :post_comments, only: [:create, :destroy]
-    resource :favorites, only: [:create, :destroy]
   end
   
+  resources :favorites, only: [:create, :destroy]
   resources :post_comments, only: [:edit, :update]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
