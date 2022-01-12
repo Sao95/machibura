@@ -16,8 +16,8 @@
 街ブラをした後、投稿されている街について知りたいとき
 
 ## 設計書
-ER図 https://drive.google.com/file/d/15GeNl8GTPTmX_pAYRA1bbNiAwg7hWHSD/view?usp=sharing
-テーブル定義書 https://docs.google.com/spreadsheets/d/1dX1c0NGiAGjJt0pgX5w9w-LHQ6mSAmv4cneio5tk6BY/edit?usp=sharing
+ER図 https://drive.google.com/file/d/15GeNl8GTPTmX_pAYRA1bbNiAwg7hWHSD/view?usp=sharing  
+テーブル定義書 https://docs.google.com/spreadsheets/d/1dX1c0NGiAGjJt0pgX5w9w-LHQ6mSAmv4cneio5tk6BY/edit?usp=sharing  
 アプリケーション詳細設計 https://docs.google.com/spreadsheets/d/19USjAfuifPsG5bNmLjJRdNme8H6-Z6-sVzp0wmeoGZY/edit?usp=sharing
 
 ## チャレンジ要素一覧
