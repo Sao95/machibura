@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
   
-  resources :posts
-  
+  resources :posts do
+    resources :post_comments, only: [:create, :destroy, :index]
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
