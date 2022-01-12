@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_state, only: [:create]
-  
+
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
