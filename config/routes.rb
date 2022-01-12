@@ -8,13 +8,19 @@ Rails.application.routes.draw do
   sessions: 'users/sessions'
   }
   
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resources :post_comments, only: [:index]
+    resource :favorites, only: [:index, :destroy]
+  end
   get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
   
   resources :posts do
-    resources :post_comments, only: [:create, :destroy, :index]
+    resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
+  
+  resources :post_comments, only: [:edit, :update]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
