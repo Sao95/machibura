@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_064212) do
+ActiveRecord::Schema.define(version: 2022_01_13_164606) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 2022_01_12_064212) do
     t.string "image_id"
     t.string "place"
     t.string "station"
+    t.text "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|

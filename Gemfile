@@ -69,17 +69,20 @@ group :production do
   gem 'mysql2'
 end
 
+# BootstrapはjQueryに依存している
+gem 'jquery-rails'
+
 # ユーザ認証機能
 gem 'devise'
 
 # ファイルをアップロードできるようにする
-gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 # アップロードした画像のリサイズを行える
-gem "refile-mini_magick"
+gem 'refile-mini_magick'
 
 # Bootstrap
 gem 'bootstrap', '~> 4.5'
-# BootstrapはjQueryというライブラリに依存している
-gem 'jquery-rails'
 # fontawesome
 gem 'font-awesome-sass', '~> 5.13'
+
+gem 'geocoder'
