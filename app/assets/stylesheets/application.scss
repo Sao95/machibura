@@ -39,3 +39,32 @@
 footer {
   margin-top: auto;
 }
+
+// TOPへ戻るボタンの位置を設定
+#pagetop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+// ボタンを円状にし、外枠を表示する
+#pagetop a {
+  display: block;
+  text-align: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid;
+}
+
+// サイズ指定、ボタンの中心に表示する
+.pagetop a i {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#map{
+  height: 200px;
+  width: 300px;
+}
