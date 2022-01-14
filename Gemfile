@@ -69,7 +69,6 @@ group :production do
   gem 'mysql2'
 end
 
-# BootstrapはjQueryに依存している
 gem 'jquery-rails'
 
 # ユーザ認証機能
@@ -81,8 +80,13 @@ gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 
 # Bootstrap
+# BootstrapはjQueryに依存している
 gem 'bootstrap', '~> 4.5'
 # fontawesome
 gem 'font-awesome-sass', '~> 5.13'
 
+# 住所←→座標（緯度、経度）変換
 gem 'geocoder'
+
+# 検索
+gem 'ransack'

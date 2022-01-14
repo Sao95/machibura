@@ -1,10 +1,10 @@
 <% @posts.each do |post| %>
 <div>
   <%= attachment_image_tag post, :image %>
-  <p> 地名</p>
+  <p> 地名 / 駅名</p>
   <div><%= post.address %></div>
-  <p> 駅名</p>
-  <div><%= post.station %></div>
+  <!--<p> 駅名</p>-->
+  <!--<div><%#= post.station %></div>-->
   <p> 投稿文</p>
   <div><%= post.writings %></div>
   <p>ユーザーネーム</p>
