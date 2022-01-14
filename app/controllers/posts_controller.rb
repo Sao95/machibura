@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    # 検索結果をoistsのindexの形式で表示する
+    # 検索結果をpostsのindexの形式で表示する
     # @posts = Post.allを ↓ に書き換える
     @posts = @search.result
     # 検索してない場合は全てのデータが返ってくる
