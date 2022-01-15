@@ -7,7 +7,7 @@
 <div>
   <p>投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %></p>
   <%= attachment_image_tag post, :image %>
-  <p> 地名 / 駅名</p>
+  <p> 住所 / 地名 / 駅名</p>
   <div><%= post.address %></div>
   <!--<p> 駅名</p>-->
   <!--<div><%#= post.station %></div>-->

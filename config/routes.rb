@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
   
-  resources :posts do
+  resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :post_comments, only: [:create]
   end
   
