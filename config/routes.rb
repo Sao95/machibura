@@ -15,11 +15,11 @@ Rails.application.routes.draw do
   get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
   
-  resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
+  resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create]
   end
   
-  resources :favorites, only: [:create, :destroy]
   resources :post_comments, only: [:edit, :update, :destroy]
   
   get 'search', to: 'posts#search'
