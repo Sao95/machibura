@@ -2,8 +2,10 @@
 <%= form_with model: @post, local:true do |f| %>
   <h4>画像</h4>
   <%= f.attachment_field :image %>
-  <h4>地名 / 駅名</h4>
-  <%= f.text_field :address, placeholder: "住所" %>
+  <h4>住所 / 地名 / 駅名</h4>
+  <%= f.text_field :address, :size=>"23" %>
+  <p>（例）東京都千代田区丸の内1丁目 / 東京都千代田区丸の内 / 東京駅</p>
+  
   <%#= f.text_field :place %>
   <!--<h4>駅名</h4>-->
   <!--<%#= f.text_field :station %>-->

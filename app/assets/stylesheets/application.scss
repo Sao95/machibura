@@ -19,10 +19,24 @@
 @import 'font-awesome';
 
 .container {
+  padding-top: 70px;
+  z-index: 1;
   margin: 0;
+  position: relative;
+}
+
+header {
+  padding: 10px;
+  position: fixed;
+  z-index: 2;
+  height: 65px;
+  width: 100%;
+  background: white;
 }
 
 .navbar {
+  height: 50px;
+  padding-bottom: 10px;
   justify-content: flex-end;
 }
 
@@ -34,6 +48,18 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.sidebar {
+  display:inline-block;
+  position: fixed;
+  width: 15%;
+}
+
+.main_content {
+  display:inline-block;
+  width: 75%;
+  margin-left: 25%;
 }
 
 footer {

@@ -16,8 +16,8 @@ class Post < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  ransacker :favorites_count do
+  # ransacker :favorites_count do
     
-  end
+  # end
 
 end
