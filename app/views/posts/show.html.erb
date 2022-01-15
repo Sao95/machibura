@@ -18,13 +18,13 @@
   <% if @post.favorited_by?(current_user) %>
     <p>
       <%= link_to favorite_path(:post_id => @post.id), method: :delete do %>
-        ★<%= @post.favorites.count %> いいね
+        ★<%= @post.favorites.count %> お気に入り
       <% end %>
     </p>
     <% else %>
     <p>
       <%= link_to favorites_path(:post_id => @post.id), method: :post do %>
-        ☆<%= @post.favorites.count %> いいね
+        ☆<%= @post.favorites.count %> お気に入り
       <% end %>
     </p>
   <% end %>
