@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
   
   resources :posts do
-    resources :post_comments, only: [:create, :destroy]
+    resources :post_comments, only: [:create]
   end
   
   resources :favorites, only: [:create, :destroy]
-  resources :post_comments, only: [:edit, :update]
+  resources :post_comments, only: [:edit, :update, :destroy]
   
   get 'search', to: 'posts#search'
 
