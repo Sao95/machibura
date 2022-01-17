@@ -19,12 +19,10 @@
   </div>
 </div>
 
-<div>
-<p>コメント件数：<%= @post.post_comments.count %></p>
-<div class="post_comments"> 
+<div id="post_comments"> 
   <%= render 'post_comments/index', post: @post %>
 </div>
-<div class ="comments_area">
+<div>
   <%= form_with(model:[@post, @post_comment]) do |f| %>
     <%= f.text_area :comment, rows:'5',placeholder: "コメント" %>
     <p><%= f.submit "送信する" %></p>
