@@ -16,7 +16,7 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @user = current_user
+    @favorites = Favorite.where(user_id: current_user.id).page(params[:page]).reverse_order
   end
 
 end

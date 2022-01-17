@@ -14,7 +14,7 @@ class PostCommentsController < ApplicationController
   end
 
   def index
-    @user = current_user
+    @post_comments = PostComment.where(user_id: current_user.id).page(params[:page]).reverse_order
   end
 
   def edit

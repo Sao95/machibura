@@ -1,6 +1,6 @@
 <div>
-<p>お気に入り件数：<%= @user.favorites.count %></p>
-<% @user.favorites.each do |favorite| %>
+<p>お気に入り件数：<%= @favorites.count %></p>
+<% @favorites.each do |favorite| %>
   <%= favorite.post.image %>
   <p> 地名</p>
   <div><%= favorite.post.place %></div>
@@ -19,3 +19,5 @@
   <% end %>
 <% end %>
 </div>
+
+<%= paginate @favorites %>

@@ -1,6 +1,6 @@
 <div>
-<p>コメント件数：<%= @user.post_comments.count %></p>
-<% @user.post_comments.each do |post_comment| %>
+<p>コメント件数：<%= @post_comments.count %></p>
+<% @post_comments.each do |post_comment| %>
   <%= post_comment.post.image %>
   <p> 地名</p>
   <div><%= post_comment.post.place %></div>
@@ -17,3 +17,5 @@
   </div>
 <% end %>
 </div>
+
+<%= paginate @post_comments %>

@@ -85,6 +85,9 @@ gem 'bootstrap', '~> 4.5'
 # fontawesome
 gem 'font-awesome-sass', '~> 5.13'
 
+# ページング機能
+gem 'kaminari','~> 1.2.1'
+
 # 住所←→座標（緯度、経度）変換
 gem 'geocoder'
 

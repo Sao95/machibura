@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def index
     # 検索結果をpostsのindexの形式で表示する
     # @posts = Post.allを ↓ に書き換える
-    @posts = @search.result
+    @posts = @search.result.page(params[:page]).reverse_order
     # 検索してない場合は全てのデータが返ってくる
   end
 
