@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
     @post = Post.find(params[:post_id])
     favorite = Favorite.find_by(post_id: @post.id, user_id: current_user.id)
     favorite.destroy!
-    # リダイレクト先を削除することで.js.erbファイルを探すようになる
+    # リダイレクト先を削除することでdestroy.js.erbファイルを探すようになる
     # redirect_to request.referer
   end
 
