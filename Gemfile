@@ -88,5 +88,9 @@ gem 'font-awesome-sass', '~> 5.13'
 # 住所←→座標（緯度、経度）変換
 gem 'geocoder'
 
-# 検索
+# 検索、ソート機能（投稿日時）
 gem 'ransack'
+
+# デバッグ
+gem 'pry-byebug'
+gem 'pry-rails'
