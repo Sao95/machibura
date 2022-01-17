@@ -10,13 +10,12 @@
   <div><%= favorite.post.writings %></div>
   <p>ユーザーネーム</p>
   <div><%= favorite.post.user.name %></div>
-  <%= favorite.created_at.strftime('%Y/%m/%d') %>
+  <div><%= favorite.created_at.strftime('%Y/%m/%d') %></div>
   <% if favorite.post.favorited_by?(current_user) %>
-    <p>
-      <%= link_to favorite_path(favorite.id, :post_id => favorite.post.id), method: :delete do %>
-        ♥いいね
-      <% end %>
-    </p>
+    お気に入り
+    <%= link_to post_favorites_path(favorite.post, favorite.id, :post_id => favorite.post.id), method: :delete do %>
+      <div class="fas fa-star star_orange"></div>
+    <% end %>
   <% end %>
 <% end %>
 </div>
