@@ -93,8 +93,7 @@ footer {
 .registrations {
   display: block;
   text-align:center;
-  margin-left: 45%;
-  margin-right: 45%;
+  margin: 5% 45%;
 }
 
 .registrations .text {
@@ -105,13 +104,27 @@ footer {
 .sessions {
   display: block;
   text-align:center;
-  margin-left: 45%;
-  margin-right: 45%;
+  margin: 10% 45%;
 }
 
 .sessions .text {
 	text-align: left;
 	display: inline-block;
+}
+
+.new_post {
+  display: block;
+  text-align:center;
+  margin: 0% 35%;
+}
+
+.new_post .text {
+	text-align: left;
+	display: inline-block;
+}
+
+.new_post .bottom_space {
+  margin-bottom: 10px;
 }
 
 #post_comments {

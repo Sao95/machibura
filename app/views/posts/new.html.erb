@@ -1,15 +1,26 @@
-<h1>投稿フォーム</h1>
-<%= form_with model: @post, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>住所 / 地名 / 駅名</h4>
-  <%= f.text_field :address, :size=>"23" %>
-  <p>（例）東京都千代田区丸の内1丁目 / 東京都千代田区丸の内 / 東京駅</p>
-  
-  <%#= f.text_field :place %>
-  <!--<h4>駅名</h4>-->
-  <!--<%#= f.text_field :station %>-->
-  <h4>投稿内容</h4>
-  <%= f.text_area :writings %>
-  <%= f.submit '投稿' %>
-<% end %>
+<div class="new_post">
+  <div class="text">
+    <h2>投稿フォーム</h2>
+
+    <%= form_with model: @post, local:true do |f| %>
+      <p class="bottom_space">
+        <h5>画像</h5>
+        <%= f.attachment_field :image %>
+      </p>
+      <p class="bottom_space">
+        <h5>住所 / 地名 / 駅名</h5>
+        (例) 東京都千代田区丸の内1丁目 / <br>
+        東京都千代田区丸の内 / 東京駅<br>
+        <%= f.text_field :address, :size=>"23" %>
+      </p>
+      <%#= f.text_field :place %>
+      <!--<h4>駅名</h4>-->
+      <!--<%#= f.text_field :station %>-->
+      <p class="bottom_space">
+        <h5>投稿内容</h5>
+        <%= f.text_area :writings, size:"35x3" %>
+      </p>
+      <p class="text-center"><%= f.submit '投稿' %></div>
+    <% end %>
+  </div>
+</div>

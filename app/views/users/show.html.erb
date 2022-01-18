@@ -1,24 +1,35 @@
-<div>
-<h3><%= @user.name %></h3>
+<div class=”container”>
+  <div class=”row”>
+    <div class="col-md-6">
+  <h4>ユーザー：<%= @user.name %></h4>
+
+<% if @user.id == current_user.id %>
+  <%= link_to "プロフィール編集", edit_user_path(@user) %>
+  <%= form_with model:@user, local:true do |f| %>
+    <%= link_to "退会する", unsubscribe_path(@user) %>
+  <% end %>
+<% end %>
+<%= link_to "コメント履歴",  user_post_comments_path(@user) %><br>
+<%= link_to "お気に入り履歴",  user_favorites_path(@user) %>
 </div>
 
-<%= link_to "コメント履歴",  user_post_comments_path(@user) %>
-<%= link_to "お気に入り履歴",  user_favorites_path(@user) %>
-
+<div class="col-md-6">
+投稿一覧履歴
 <% @posts.each do |post| %>
 <div>
   <%= attachment_image_tag post, :image %>
-  <p> 投稿文</p>
-  <div><%= post.writings %></div>
-  <%= link_to "詳細",  post_path(post.id) %>
+  投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
+  住所 / 地名 / 駅名：<%= post.address %><br>
+  投稿文：<%= post.writings%><br>
+  <%= link_to "詳細",  post_path(post.id) %> / 
+  <% if post.user == current_user %>
+    <%#= link_to "編集", edit_post_path(@post) %>
+    <%= link_to "削除", post_path(post), method: :delete %>
+  <% end %>
 </div>
 <% end %>
-
-<% if @user.id == current_user.id %>
-  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-  <%= form_with model:@user, local:true do |f| %>
-    <p><%= link_to "退会する", unsubscribe_path(@user), class: "btn btn-danger" %><p>
-  <% end %>
-<% end %>
+</div>
+</div>
+</div>
 
 <%= paginate @posts %>
