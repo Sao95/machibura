@@ -1,6 +1,6 @@
 <p>お気に入り件数：<%= @favorites.count %></p>
 <% @favorites.each do |favorite| %>
-  <%= favorite.post.image %>
+  <%= attachment_image_tag favorite.post, :image  %>
   <p> 地名</p>
   <div><%= favorite.post.place %></div>
   <p> 駅名</p>
@@ -10,14 +10,9 @@
   <p>ユーザーネーム</p>
   <div><%= favorite.post.user.name %></div>
   <div><%= favorite.created_at.strftime('%Y/%m/%d') %></div>
-  <% if favorite.post.favorited_by?(current_user) %>
-    お気に入り
-    <div id="index_favorite_destroy">
-    <%= link_to post_favorites_path(favorite.post, favorite.id, :post_id => favorite.post.id), method: :delete do %>
-      <div class="fas fa-star star_orange"></div>
-    <% end %>
-    </div>
-  <% end %>
+  <div id="favorite_btn_<%= favorite.post.id %>" class="favorite_btn">
+    <%= render "favorites/favorite_btn", post: favorite.post %>
+  </div>
 <% end %>
 
 <%= paginate @favorites %>

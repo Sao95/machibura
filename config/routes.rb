@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resource :favorites, only: [:create, :destroy]
-    resources :post_comments, only: [:create]
+    resources :post_comments, only: [:create, :destroy]
   end
   
-  resources :post_comments, only: [:edit, :update, :destroy]
+  resources :post_comments, only: [:edit, :update]
   
   get 'search', to: 'posts#search'
 

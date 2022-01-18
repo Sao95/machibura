@@ -1,3 +1,1 @@
-if $("#favorite_btn").html("<%= j(render 'favorites/favorite_btn', post: @post) %>");
-
-else if $("#index_favorite_destroy").html("<%= j(render 'favorites/index', favorite: @favorites) %>");
+$("#favorite_btn_<%= @post.id %>").html("<%= j(render 'favorites/favorite_btn', post: @post) %>");
