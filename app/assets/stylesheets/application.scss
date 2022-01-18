@@ -86,13 +86,45 @@ footer {
 
 // サイズ指定、ボタンの中心に表示する
 .pagetop a i {
-    font-size: 20px;
-    line-height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.registrations {
+  display: block;
+  text-align:center;
+  margin-left: 45%;
+  margin-right: 45%;
+}
+
+.registrations .text {
+	text-align: left;
+	display: inline-block;
+}
+
+.sessions {
+  display: block;
+  text-align:center;
+  margin-left: 45%;
+  margin-right: 45%;
+}
+
+.sessions .text {
+	text-align: left;
+	display: inline-block;
+}
+
+#post_comments {
+  
 }
 
 #map{
-  height: 400px;
-  width: 600px;
+  height: 300px;
+  width: 400px;
+}
+
+#favorite_btn {
+  text-align: right;
 }
 
 .star_orange{color:#ffa90a;}

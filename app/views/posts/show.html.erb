@@ -1,30 +1,41 @@
-<div>
-  <%= attachment_image_tag @post, :image %>
-  <p>住所 / 地名 / 駅名</p>
-  <%= render "posts/map" %>
-  <div><%= @post.address %></div>
-  <!--<p> 駅名</p>-->
-  <!--<div><%#= @post.station %></div>-->
-  <p> 投稿文</p>
-  <p><%= @post.writings%></p>
-  <p>ユーザーネーム</p>
-  <p><%= @post.user.name %></p>
-  <p>投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @post.user == current_user %>
-    <%#= link_to "編集", edit_post_path(@post) %>
-    <%= link_to "削除", post_path(@post), method: :delete %>
-  <% end %>
+<div class="show_post">
+
+<div class=”container”>
   <div id="favorite_btn">
     <%= render "favorites/favorite_btn", post: @post %>
   </div>
+<table class=”row”>
+  <td class="col-md-6"><%= attachment_image_tag @post, :image, :image,size:"400x300", fallback:"no_image_square.jpg" %></td>
+  <td class="col-md-6">
+    投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %><br>
+    住所 / 地名 / 駅名：<%= @post.address %><br>
+    投稿文：<%= @post.writings%><br>
+    ユーザー：<%= @post.user.name %><br>
+    <% if @post.user == current_user %>
+      <%#= link_to "編集", edit_post_path(@post) %>
+      <%= link_to "削除", post_path(@post), method: :delete %>
+    <% end %>
+  </td>
+</table>
+<table class=”row”>
+  <td class="col-md-6"><%= render "posts/map" %></td>
+  <td class="col-md-6">
+    <div id="post_comments">
+      <%= render 'post_comments/index', post: @post %>
+    </div>
+    <div>
+      <%= form_with(model:[@post, @post_comment]) do |f| %>
+        <%= f.text_area :comment, size:"30x2",placeholder: "コメント" %>
+        <%= f.submit "送信する" %>
+      <% end %>
+    </div>
+  </td>
+</table>
+</div>
 </div>
 
-<div id="post_comments"> 
-  <%= render 'post_comments/index', post: @post %>
-</div>
-<div>
-  <%= form_with(model:[@post, @post_comment]) do |f| %>
-    <%= f.text_area :comment, rows:'5',placeholder: "コメント" %>
-    <p><%= f.submit "送信する" %></p>
-  <% end %>
-</div>
+
+  <!--<p> 駅名</p>-->
+  <!--<div><%#= @post.station %></div>-->
+
+

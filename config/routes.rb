@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root 'homes#top'
   
   # 特定のコントローラーがどこに存在するかを指定する
-  # skip オプションで不要なルーティングを削除  ,skip: [:passwords,]
-  devise_for :users, controllers: {
+  # skip オプションで不要なルーティングを削除 
+  devise_for :users,skip: [:passwords,], controllers: {
   registrations: "users/registrations",
   sessions: 'users/sessions'
   }
