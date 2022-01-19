@@ -18,7 +18,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-.container {
+.container-fluid {
   padding-top: 70px;
   z-index: 1;
   margin: 0;
@@ -32,6 +32,12 @@ header {
   height: 65px;
   width: 100%;
   background: white;
+  background-image: url("hoge.jpg");
+}
+
+.logo {
+  position: fixed;
+  left: 10px;
 }
 
 .navbar {
@@ -125,10 +131,6 @@ footer {
 
 .new_post .bottom_space {
   margin-bottom: 10px;
-}
-
-#post_comments {
-  
 }
 
 #map{
