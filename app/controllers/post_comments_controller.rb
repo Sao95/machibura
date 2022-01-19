@@ -18,6 +18,12 @@ class PostCommentsController < ApplicationController
   def index
     @post_comments = PostComment.where(user_id: current_user.id).page(params[:page]).reverse_order
   end
+  
+  def destroy_index
+    @post_comment = PostComment.find_by(id: params[:id])
+    @post_comment.destroy
+    redirect_to user_post_comments_path(current_user)
+  end
 
   def edit
     @post_comment = PostComment.find(params[:id])
@@ -33,7 +39,7 @@ class PostCommentsController < ApplicationController
   private
 
   def post_comment_params
-    params.require(:post_comment).permit(:comment, :post_id)
+    params.require(:post_comment).permit(:comment)
   end
 
 end

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     # current_user → deviseのヘルパーメソッド
     # ログイン中のユーザー情報を取得
-    @post.user_id = current_user.id
+    # @post.user_id = current_user.id
     @post.save
     redirect_to posts_path
   end

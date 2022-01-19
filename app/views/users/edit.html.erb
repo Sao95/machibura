@@ -1,7 +1,12 @@
-<h2>プロフィール編集</h2>
+<!--<div class="text-right"><%#= link_to "退会する", unsubscribe_path(@user), class: "btn btn-danger" %></div>-->
+
+<div class="edit_user">
+  <div class="text">
+<h2>ユーザー名変更</h2>
 <%= form_with model:@user, local:true do |f| %>
-  <p>ユーザーネーム</p>
-  <%= f.text_field :name, autofocus: true, placeholder:"ニックネーム" %>
-  <%= f.submit "変更を保存" %>
-  <%= link_to "退会する", unsubscribe_path(@user), class: "btn btn-danger" %>
+  <p class="bottom_space"><h5>ユーザー名</h5></p>
+  <div class="bottom_space"><%= f.text_field :name, autofocus: true, placeholder:"ニックネーム" %></div>
+  <div class="bottom_space"><%= f.submit "変更を保存" %></div>
 <% end %>
+</div>
+</div>

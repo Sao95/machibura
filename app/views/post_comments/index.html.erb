@@ -1,5 +1,25 @@
-<div id="post_comments">
-  <%= render 'post_comments/index', post_comments: @post_comments %>
+<h5>コメント件数：<%= @post_comments.count %></h5>
+
+<div class=”container”>
+<% @post_comments.each do |post_comment| %>
+  <table class=”row”>
+    <td class="col-md-4"><%= attachment_image_tag @post, :image, size:"250x200", fallback:"no_image_square.jpg" %></td>
+    <td class="col-md-8">
+      <div class="my_post_comments">
+      <p class="lead"><%= post_comment.comment %></p>
+      <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+      <% if post_comment.user == current_user %>
+        <%= link_to "削除", destroy_index_post_comment_path(post_comment), method: :delete %><br>
+      <% end %>
+      </div>
+      住所 / 地名 / 駅名：<%= post_comment.post.address %><br>
+      投稿文：<%= post_comment.post.writings %><br>
+      投稿日時：<%= post_comment.post.created_at.strftime('%Y/%m/%d') %><br>
+      ユーザー：<%= post_comment.post.user.name %><br>
+      <%= link_to "詳細",  post_path(post_comment.post.id) %>
+    </td>
+  </table>
+<% end %>
 </div>
 
 <%= paginate @post_comments %>

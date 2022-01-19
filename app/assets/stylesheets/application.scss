@@ -145,13 +145,44 @@ footer {
   margin-bottom: 10px;
 }
 
+.edit_user {
+  display: block;
+  text-align:center;
+  margin-right: 30%;
+  margin-top: 15%;
+}
+
+.edit_user .text {
+	text-align: left;
+	display: inline-block;
+}
+
+.bottom_space {
+  margin-bottom: 10px;
+}
+
 .post_comments {
   margin-bottom: 5px;
+}
+
+.my_post_comments {
+  margin-bottom: 10px;
+}
+
+.my_post_comments p {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.map {
+  display: inline-block;
 }
 
 #map{
   height: 300px;
   width: 400px;
+  position: fixed;
+  top: 0;
 }
 
 .my_posts {

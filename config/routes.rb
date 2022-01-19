@@ -20,7 +20,11 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
   end
   
-  resources :post_comments, only: [:edit, :update]
+  resources :post_comments, only: [:edit, :update] do
+    member do
+      delete 'destroy_index'
+    end
+  end  
   
   get 'search', to: 'posts#search'
 

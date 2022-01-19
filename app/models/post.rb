@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   # 画像アップ用のメソッド（attachment）を追加してフィールド名に（image）を指定、refile使用時のルール
   attachment :image
 
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 

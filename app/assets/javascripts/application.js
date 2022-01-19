@@ -19,6 +19,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
 $(function() {
   $('#pagetop a').hide();
     $(window).scroll(function () {
@@ -29,11 +30,11 @@ $(function() {
     else {
       $('#pagetop a').fadeOut('slow');
     }
-    $('#pagetop a').on('click',function(event){
-      $('body, html').animate({
-        scrollTop:0
-      }, 800);
-      event.preventDefault();
-    });
-  })
+  });
+  $('#pagetop a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
 });
