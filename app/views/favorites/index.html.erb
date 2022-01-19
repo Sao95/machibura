@@ -1,18 +1,23 @@
-<p>お気に入り件数：<%= @favorites.count %></p>
+<h5>お気に入り件数：<%= @favorites.count %></h5>
+
+<div class=”container”>
 <% @favorites.each do |favorite| %>
-  <%= attachment_image_tag favorite.post, :image  %>
-  <p> 地名</p>
-  <div><%= favorite.post.place %></div>
-  <p> 駅名</p>
-  <div><%= favorite.post.station %></div>
-  <p> 投稿文</p>
-  <div><%= favorite.post.writings %></div>
-  <p>ユーザーネーム</p>
-  <div><%= favorite.post.user.name %></div>
-  <div><%= favorite.created_at.strftime('%Y/%m/%d') %></div>
-  <div id="favorite_btn_<%= favorite.post.id %>" class="favorite_btn">
-    <%= render "favorites/favorite_btn", post: favorite.post %>
-  </div>
+  <table class=”row”>
+    <td class="col-md-4"><%= attachment_image_tag @post, :image, size:"250x200", fallback:"no_image_square.jpg" %></td>
+    <td class="col-md-8">
+      投稿日時：<%= favorite.post.created_at.strftime('%Y/%m/%d') %><br>
+      住所 / 地名 / 駅名：<%= favorite.post.address %><br>
+      投稿文：<%= favorite.post.writings %><br>
+      ユーザー：<%= favorite.post.user.name %><br>
+      <div id="favorite_btn_<%= favorite.post.id %>" class="favorite_btn, float-left">
+        <%= render "favorites/favorite_btn", post: favorite.post %>
+      </div><br>
+      <%#= favorite.created_at.strftime('%Y/%m/%d') %>
+      <%= link_to "詳細",  post_path(favorite.post.id) %>
+    </td>
+  </table>
+      
+  
 <% end %>
 
 <%= paginate @favorites %>

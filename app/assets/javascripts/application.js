@@ -19,12 +19,21 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
 $(function() {
-  $('#pagetop a').on('click',function(event){
-    $('body, html').animate({
-      scrollTop:0
-    }, 800);
-    event.preventDefault();
-  });
+  $('#pagetop a').hide();
+    $(window).scroll(function () {
+    //100pxスクロールしたら表示する
+    if ($(this).scrollTop() > 100) {
+      $('#pagetop a').fadeIn("slow");
+    } 
+    else {
+      $('#pagetop a').fadeOut('slow');
+    }
+    $('#pagetop a').on('click',function(event){
+      $('body, html').animate({
+        scrollTop:0
+      }, 800);
+      event.preventDefault();
+    });
+  })
 });

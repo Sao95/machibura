@@ -1,7 +1,4 @@
 <div class=”container”>
-  <div id="favorite_btn_<%= @post.id %>" class="favorite_btn">
-    <%= render "favorites/favorite_btn", post: @post %>
-  </div>
   <table class=”row”>
     <td class="col-md-6"><%= attachment_image_tag @post, :image, size:"400x300", fallback:"no_image_square.jpg" %></td>
     <td class="col-md-6">
@@ -9,6 +6,9 @@
       住所 / 地名 / 駅名：<%= @post.address %><br>
       投稿文：<%= @post.writings%><br>
       ユーザー：<%= @post.user.name %><br>
+      <div id="favorite_btn_<%= @post.id %>" class="favorite_btn, float-left">
+        <%= render "favorites/favorite_btn", post: @post %>
+      </div><br>
       <% if @post.user == current_user %>
         <%#= link_to "編集", edit_post_path(@post) %>
         <%= link_to "削除", post_path(@post), method: :delete %>
