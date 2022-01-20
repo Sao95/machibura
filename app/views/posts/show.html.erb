@@ -1,11 +1,15 @@
 <div class=”container”>
   <table class=”row”>
-    <td class="col-md-6"><%= attachment_image_tag @post, :image, size:"400x300", fallback:"asset_path(no_image_square.jpg)" %></td>
+    <td class="col-md-6"><%= attachment_image_tag @post, :image, size:"400x300", fallback:"no_image_square.jpg" %></td>
+    <!--asset_path(no_image_square.jpg)-->
     <td class="col-md-6">
       投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %><br>
       住所 / 地名 / 駅名：<%= @post.address %><br>
       投稿文：<%= @post.writings%><br>
-      ユーザー：<%= @post.user.name %><br>
+      ユーザー：
+      <%= link_to user_path(@post.user) do %>
+        <%= @post.user.name %><br>
+      <% end %>
       <div id="favorite_btn_<%= @post.id %>" class="favorite_btn, float-left">
         <%= render "favorites/favorite_btn", post: @post %>
       </div><br>

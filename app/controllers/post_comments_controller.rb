@@ -3,8 +3,13 @@ class PostCommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @post_comments = @post.post_comments
-    @post_comment = current_user.post_comments.new(post_comment_params)
-    @post_comment.post_id = @post.id
+    if user_signed_in?
+      @post_comment = current_user.post_comments.new(post_comment_params)
+      @post_comment.post_id = @post.id
+    else
+      @post_comment = PostComment.new(post_comment_params)
+      @post_comment.post_id = @post.id
+    end
     @post_comment.save
   end
 

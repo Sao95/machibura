@@ -1,39 +1,49 @@
-<div class=”container”>
-  <div class="row">
-    
-    <div class="col-3">
-      ユーザー名
-      <h4><%= @user.name %></h4>
-      <% if @user.id == current_user.id %>
-        <p><%= link_to "ユーザー名変更", edit_user_path(@user) %></p>
+<div class="user_show">
+  <div class="user_name">
+    ユーザー名
+      <% if user_signed_in? && @user.id == current_user.id %>
+        <h4><%= @user.name %></h4>
+      <% else %>
+        <h4><%= @user.name %><span class="small">さん</span></h4>
       <% end %>
-      <p><%= link_to "コメント履歴",  user_post_comments_path(@user) %></p>
-      <p><%= link_to "お気に入り履歴",  user_favorites_path(@user) %></p>
-      <% if @user.id == current_user.id %>
+      </div>
+<div class=”container”>
+  <div class="row-fluid">
+    <div class="col-3, user_show_link">
+      <% if user_signed_in? && @user.id == current_user.id %>
+        <p><%= link_to "ユーザー名変更", edit_user_path(@user) %></p>
+        <p><%= link_to "コメント履歴",  user_post_comments_path(@user) %></p>
+        <p><%= link_to "お気に入り履歴",  user_favorites_path(@user) %></p>
         <%= form_with model:@user, local:true do |f| %>
           <p><%= link_to "退会", unsubscribe_path(@user) %></p>
         <% end %>
       <% end %>
     </div>
     
-    <div class="col-9">
+    <div class="col-9, user_posts">
       <h5>投稿一覧履歴</h5>
+      
       <% @posts.each do |post| %>
-      <div class="my_posts">
-        <%= attachment_image_tag post, :image, fallback:"asset_path(no_image_square.jpg)" %>
+      <table class=”row”>
+      <div class="_post_index">
+        <td class="col-md-3, margin-0"><%= attachment_image_tag post, :image,size:"150x100", fallback:"no_image_square.jpg" %></td>
+        <!--asset_path(no_image_square.jpg)-->
+        <td class="col-md-9">
         投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
         住所 / 地名 / 駅名：<%= post.address %><br>
         投稿文：<%= post.writings%><br>
-        <%= link_to "詳細",  post_path(post.id) %> / 
+        <%= link_to "詳細",  post_path(post.id) %>
         <% if post.user == current_user %>
           <%#= link_to "編集", edit_post_path(@post) %>
-          <%= link_to "削除", post_path(post), method: :delete %>
+          / <%= link_to "削除", post_path(post), method: :delete %>
         <% end %>
+        </td>
       </div>
       <% end %>
     </div>
-    
+    </table>
   </div>
+</div>
 </div>
 
 <%= paginate @posts %>

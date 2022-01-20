@@ -63,7 +63,20 @@ header {
 .sidebar {
   display: inline-block;
   position: fixed;
-  width: 15%;
+  width: 25%;
+  padding: 0 2.5%;
+}
+
+.sidebar .search {
+  margin-top: 10px;
+}
+
+.sidebar .index_link {
+  margin-top: 10px;
+}
+
+.sidebar .btn {
+  margin: 5px 0 0 70%;
 }
 
 .main_content {
@@ -100,93 +113,6 @@ footer {
 .pagetop a i {
   font-size: 20px;
   line-height: 40px;
-}
-
-.registrations {
-  display: block;
-  text-align:center;
-  margin-top: 5%;
-  margin-right: 25%;
-}
-
-.registrations .text {
-	text-align: left;
-	display: inline-block;
-}
-
-.registration_actions {
-  margin: 5px;
-}
-
-.sessions {
-  display: block;
-  text-align:center;
-  margin-top: 10%;
-  margin-right: 35%;
-}
-
-.sessions .text {
-	text-align: left;
-	display: inline-block;
-}
-
-.new_post {
-  display: block;
-  text-align:center;
-  margin-right: 30%;
-}
-
-.new_post .text {
-	text-align: left;
-	display: inline-block;
-}
-
-.new_post .bottom_space {
-  margin-bottom: 10px;
-}
-
-.edit_user {
-  display: block;
-  text-align:center;
-  margin-right: 30%;
-  margin-top: 15%;
-}
-
-.edit_user .text {
-	text-align: left;
-	display: inline-block;
-}
-
-.bottom_space {
-  margin-bottom: 10px;
-}
-
-.post_comments {
-  margin-bottom: 5px;
-}
-
-.my_post_comments {
-  margin-bottom: 10px;
-}
-
-.my_post_comments p {
-  font-size: 25px;
-  margin-bottom: 0;
-}
-
-.map {
-  display: inline-block;
-}
-
-#map{
-  height: 300px;
-  width: 400px;
-  position: fixed;
-  top: 0;
-}
-
-.my_posts {
-  margin-bottom: 10px;
 }
 
 .favorite_btn {

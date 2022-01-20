@@ -3,7 +3,8 @@
 <div class=”container”>
 <% @post_comments.each do |post_comment| %>
   <table class=”row”>
-    <td class="col-md-4"><%= attachment_image_tag @post, :image, size:"250x200", fallback:"asset_path(no_image_square.jpg)" %></td>
+    <td class="col-md-4"><%= attachment_image_tag @post, :image, size:"250x200", fallback:"no_image_square.jpg" %></td>
+    <!--asset_path(no_image_square.jpg)-->
     <td class="col-md-8">
       <div class="my_post_comments">
       <p class="lead"><%= post_comment.comment %></p>
