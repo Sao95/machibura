@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     posts_path
   end
-  
+
   def find_current_user
     @user = current_user
   end
