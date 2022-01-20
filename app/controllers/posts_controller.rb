@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    # current_user → deviseのヘルパーメソッド
-    # ログイン中のユーザー情報を取得
     if user_signed_in?
+      # current_user → deviseのヘルパーメソッド
+      # ログイン中のユーザー情報を取得
       @post.user_id = current_user.id
     end
     @post.save
@@ -42,7 +42,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = current_user
     @post.destroy
-    # 前ページセッションへ遷移
     # session[:previous_url] → showで定義
     redirect_to session[:previous_url]
   end

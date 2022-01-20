@@ -16,7 +16,7 @@
       住所 / 地名 / 駅名：<%= post_comment.post.address %><br>
       投稿文：<%= post_comment.post.writings %><br>
       投稿日時：<%= post_comment.post.created_at.strftime('%Y/%m/%d') %><br>
-      ユーザー：<%= post_comment.post.user.name %><br>
+      ユーザー：<%= user_name(post_comment.post.user) %><br>
       <%= link_to "詳細",  post_path(post_comment.post.id) %>
     </td>
   </table>

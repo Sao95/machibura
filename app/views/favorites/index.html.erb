@@ -8,7 +8,7 @@
       投稿日時：<%= favorite.post.created_at.strftime('%Y/%m/%d') %><br>
       住所 / 地名 / 駅名：<%= favorite.post.address %><br>
       投稿文：<%= favorite.post.writings %><br>
-      ユーザー：<%= favorite.post.user.name %><br>
+      ユーザー：<%= user_name(favorite.post.user) %><br>
       <div id="favorite_btn_<%= favorite.post.id %>" class="favorite_btn, float-left">
         <%= render "favorites/favorite_btn", post: favorite.post %>
       </div><br>
