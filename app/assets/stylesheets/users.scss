@@ -2,34 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// devise/registrations/new.html.erb
 .registrations {
   display: block;
   text-align:center;
   margin-top: 5%;
   margin-right: 25%;
 }
-
 .registrations .text {
 	text-align: left;
 	display: inline-block;
 }
-
 .registration_actions {
   margin: 5px;
 }
 
+// devise/sessions/new.html.erb
 .sessions {
   display: block;
   text-align: center;
   margin-top: 10%;
   margin-right: 35%;
 }
-
 .sessions .text {
 	text-align: left;
 	display: inline-block;
 }
 
+// show.html.erb
 .user_name {
   position: fixed;
   top: 9%;
@@ -38,48 +38,46 @@
   background-color: white;
   z-index: 2;
 }
-
-.user_show_link {
+.user_show .link {
   position: fixed;
   margin-top: 7%;
   z-index: 1;
 }
-
 .user_posts {
   position: relative;
   padding-top: 10%;
   margin-left: 20%;
 }
-
-
 .user_post {
   margin-bottom: 10px;
 }
 
+// edit.html.erb
 .edit_user {
   display: block;
   text-align:center;
   margin-right: 30%;
   margin-top: 10%;
 }
-
 .edit_user .text {
 	text-align: left;
 	display: inline-block;
 }
+.edit_user .space {
+  margin-bottom: 10px;
+}
 
+// unsubscribe.html.erb
 .withdraw {
   display: block;
   text-align: center;
   margin-top: 10%;
   margin-right: 25%;
 }
-
 .withdraw .text {
   text-align: left;
 	display: inline-block;
 }
-
 .withdraw .btns {
   margin-top: 10px;
 }

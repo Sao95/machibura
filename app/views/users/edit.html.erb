@@ -4,9 +4,9 @@
   <div class="text">
     <h2>ユーザー名変更</h2>
     <%= form_with model:@user, local:true do |f| %>
-      <p class="bottom_space"><h5>ユーザー名</h5></p>
-      <div class="bottom_space"><%= f.text_field :name, autofocus: true, placeholder:"ニックネーム" %></div>
-      <div class="bottom_space"><%= f.submit "変更を保存" %></div>
+      <p class="space"><h5>ユーザー名</h5></p>
+      <div class="space"><%= f.text_field :name, autofocus: true, placeholder:"ニックネーム" %></div>
+      <div class="space"><%= f.submit "変更を保存" %></div>
     <% end %>
   </div>
 </div>

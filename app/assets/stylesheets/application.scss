@@ -18,17 +18,25 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-.container-fluid {
+// application.html.erb
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#wrapper .container-fluid {
   padding-top: 70px;
   z-index: 1;
   margin: 0;
   position: relative;
 }
-
-p {
-  margin-bottom: 5px;
+.main_content {
+  display: inline-block;
+  width: 75%;
+  margin-left: 25%;
 }
 
+// _header.html.erb
 header {
   padding: 10px;
   position: fixed;
@@ -38,57 +46,42 @@ header {
   background: white;
   background-image: url("hoge.jpg");
 }
-
 .logo {
   position: fixed;
   left: 3%;
 }
-
 .navbar {
   height: 50px;
   padding-bottom: 10px;
   justify-content: flex-end;
 }
 
-.copyright {
-  margin: 1rem;
-}
-
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
+// _sidebar.html.erb
 .sidebar {
   display: inline-block;
   position: fixed;
   width: 18%;
   padding: 0 0 0 3%;
 }
-
 .sidebar .search {
   margin-top: 10px;
 }
-
 .sidebar .index_link {
   margin-top: 10px;
 }
-
 .sidebar .btn {
   margin: 5px 0 0 70%;
 }
 
-.main_content {
-  display: inline-block;
-  width: 75%;
-  margin-left: 25%;
-}
-
+// _footer.html.erb
 footer {
   margin-top: auto;
 }
+.copyright {
+  margin: 1rem;
+}
 
+// _pagetop.html.erb
 // TOPへ戻るボタンの位置を設定
 #pagetop {
   z-index: 2;
@@ -96,7 +89,6 @@ footer {
   right: 20px;
   bottom: 20px;
 }
-
 // ボタンを円状にし、外枠を表示する
 #pagetop a {
   display: block;
@@ -108,17 +100,20 @@ footer {
   border: 1px solid;
   background-color: white;
 }
-
 // サイズ指定、ボタンの中心に表示する
 .pagetop a i {
   font-size: 20px;
   line-height: 40px;
 }
 
+// favorites/index.html.erb
 .favorite_btn {
   text-align: right;
 }
-
+// _favorite_btn.html.erb
 .star_orange{color:#ffa90a;}
-
 .star_gray{color:#a1a1a1;}
+
+p {
+  margin-bottom: 5px;
+}

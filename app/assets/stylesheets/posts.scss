@@ -2,29 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// new.html.erb
 .new_post {
   display: block;
-  text-align:center;
+  text-align: center;
   margin-right: 30%;
 }
-
 .new_post .text {
 	text-align: left;
 	display: inline-block;
 }
-
-.new_post .bottom_space {
+.new_post .space {
   margin-bottom: 10px;
 }
 
-.bottom_space {
-  margin-bottom: 10px;
-}
-
+// show.html.erb
 .map {
   display: inline-block;
 }
-
 #map{
   height: 300px;
   width: 400px;

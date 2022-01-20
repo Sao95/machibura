@@ -20,6 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
+// ページトップ
 $(function() {
   $('#pagetop a').hide();
     $(window).scroll(function () {

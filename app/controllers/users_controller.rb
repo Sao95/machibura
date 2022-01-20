@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
   
+  # 退会確認画面
   def unsubscribe
     @user = current_user
   end

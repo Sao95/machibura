@@ -16,17 +16,19 @@ Rails.application.routes.draw do
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
   
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    member do
+      delete 'destroy_from_user_show'
+    end
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
+  get 'search', to: 'posts#search'
   
   resources :post_comments, only: [:edit, :update] do
     member do
-      delete 'destroy_index'
+      delete 'destroy_from_index'
     end
   end  
-  
-  get 'search', to: 'posts#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -24,26 +24,28 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
-    # 前ページセッションを定義
-    session[:previous_url] = request.referer
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  # def edit
+  #   @post = Post.find(params[:id])
+  # end
 
-  def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to post_path(@post.id)
-  end
+  # def update
+  #   @post = Post.find(params[:id])
+  #   @post.update(post_params)
+  #   redirect_to post_path(@post.id)
+  # end
 
   def destroy
     @post = Post.find(params[:id])
-    @user = current_user
     @post.destroy
-    # session[:previous_url] → showで定義
-    redirect_to session[:previous_url]
+    redirect_to posts_path
+  end
+  
+  def destroy_from_user_show
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to request.referer
   end
 
   private

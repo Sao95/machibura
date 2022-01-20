@@ -1,15 +1,15 @@
 <div class="user_show">
   <div class="user_name">
     ユーザー名
-      <% if user_signed_in? && @user.id == current_user.id %>
-        <h4><%= @user.name %></h4>
-      <% else %>
-        <h4><%= @user.name %><span class="small">さん</span></h4>
-      <% end %>
-      </div>
-<div class=”container”>
-  <div class="row-fluid">
-    <div class="col-3, user_show_link">
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <h4><%= @user.name %></h4>
+    <% else %>
+      <h4><%= @user.name %><span class="small">さん</span></h4>
+    <% end %>
+  </div>
+  <div class=”container”>
+    <div class="row-fluid">
+      <div class="col-3, link">
       <% if user_signed_in? && @user.id == current_user.id %>
         <p><%= link_to "ユーザー名変更", edit_user_path(@user) %></p>
         <p><%= link_to "コメント履歴",  user_post_comments_path(@user) %></p>
@@ -19,31 +19,27 @@
         <% end %>
       <% end %>
     </div>
-    
+
     <div class="col-9, user_posts">
       <h5>投稿一覧履歴</h5>
-      
       <% @posts.each do |post| %>
       <table class=”row”>
-      <div class="_post_index">
         <td class="col-md-3, margin-0"><%= attachment_image_tag post, :image,size:"150x100", fallback:"no_image_square.jpg" %></td>
         <!--asset_path(no_image_square.jpg)-->
         <td class="col-md-9">
-        投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
-        住所 / 地名 / 駅名：<%= post.address %><br>
-        投稿文：<%= post.writings%><br>
-        <%= link_to "詳細",  post_path(post.id) %>
-        <% if post.user == current_user %>
-          <%#= link_to "編集", edit_post_path(@post) %>
-          / <%= link_to "削除", post_path(post), method: :delete %>
-        <% end %>
+          投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
+          住所 / 地名 / 駅名：<%= post.address %><br>
+          投稿文：<%= post.writings%><br>
+          <%= link_to "詳細",  post_path(post.id) %>
+          <% if post.user == current_user %>
+            <%#= link_to "編集", edit_post_path(@post) %>
+            / <%= link_to "削除", destroy_from_user_show_post_path(post), method: :delete %>
+          <% end %>
         </td>
-      </div>
+      </table>
       <% end %>
     </div>
-    </table>
   </div>
-</div>
 </div>
 
 <%= paginate @posts %>

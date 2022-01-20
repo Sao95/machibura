@@ -6,7 +6,7 @@
       投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %><br>
       住所 / 地名 / 駅名：<%= @post.address %><br>
       投稿文：<%= @post.writings%><br>
-      ユーザー：<%= user_name(@post.user) %>
+      ユーザー：<%= user_name(@post.user) %><br>
       <div id="favorite_btn_<%= @post.id %>" class="favorite_btn, float-left">
         <%= render "favorites/favorite_btn", post: @post %>
       </div><br>

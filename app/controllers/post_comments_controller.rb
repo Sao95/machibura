@@ -1,18 +1,22 @@
 class PostCommentsController < ApplicationController
-
+  
+  # 非同期通信
   def create
     @post = Post.find(params[:post_id])
     @post_comments = @post.post_comments
     if user_signed_in?
+      # ログインしているユーザーidを紐づける
       @post_comment = current_user.post_comments.new(post_comment_params)
       @post_comment.post_id = @post.id
     else
+      # ユーザーidはない
       @post_comment = PostComment.new(post_comment_params)
       @post_comment.post_id = @post.id
     end
     @post_comment.save
   end
-
+  
+  # 非同期通信
   def destroy
     @post_comment = PostComment.find_by(id: params[:id])
     @post = @post_comment.post
@@ -24,22 +28,22 @@ class PostCommentsController < ApplicationController
     @post_comments = PostComment.where(user_id: current_user.id).page(params[:page]).reverse_order
   end
   
-  def destroy_index
+  def destroy_from_index
     @post_comment = PostComment.find_by(id: params[:id])
     @post_comment.destroy
     redirect_to user_post_comments_path(current_user)
   end
 
-  def edit
-    @post_comment = PostComment.find(params[:id])
-  end
+  # def edit
+  #   @post_comment = PostComment.find(params[:id])
+  # end
 
-  def update
-    @post_comment = PostComment.find(params[:id])
-    @user = current_user
-    @post_comment.update!(post_comment_params)
-    redirect_to request.referer
-  end
+  # def update
+  #   @post_comment = PostComment.find(params[:id])
+  #   @user = current_user
+  #   @post_comment.update!(post_comment_params)
+  #   redirect_to request.referer
+  # end
 
   private
 
