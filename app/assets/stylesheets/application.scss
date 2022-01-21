@@ -38,7 +38,7 @@
 
 // _header.html.erb
 header {
-  padding: 10px;
+  padding: 10px 0 5px 0;
   position: fixed;
   z-index: 2;
   height: 65px;
@@ -48,12 +48,18 @@ header {
 }
 .logo {
   position: fixed;
-  left: 3%;
+  left: 5px;
 }
 .navbar {
+  padding: 0 3% 0 0;
   height: 50px;
-  padding-bottom: 10px;
   justify-content: flex-end;
+}
+.navbar li {
+  padding-top: 10%;
+}
+li a {
+  color: #523f27;
 }
 
 // _sidebar.html.erb
