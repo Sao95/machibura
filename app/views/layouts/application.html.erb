@@ -13,9 +13,15 @@
     <div id="wrapper">
       <%= render "layouts/header" %>
       <main>
-        <p id="notice"><%= notice %></p>
         <div class="container-fluid">
-          <div class="row">
+          <!--フラッシュメッセージ-->
+          <% if notice == "お気に入りに登録しました" %>
+          <% elsif notice == "お気に入りを解除しました" %>
+          <% else %>
+            <div id="application_flash_message"><p><%= notice %></p></div>
+            <div id="application_flash_message"><p><%= flash[:success] %></p></div>
+          <% end %>
+          <div class="row, application_row">
             <div class="col-md-3 sidebar">
               <%= render "layouts/sidebar" %>
             </div>

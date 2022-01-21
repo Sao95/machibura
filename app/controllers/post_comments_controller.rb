@@ -1,4 +1,6 @@
 class PostCommentsController < ApplicationController
+  # deviseのヘルパーメソッド
+  before_action :authenticate_user!,except: [:create]
   
   # 非同期通信
   def create
@@ -33,17 +35,6 @@ class PostCommentsController < ApplicationController
     @post_comment.destroy
     redirect_to user_post_comments_path(current_user)
   end
-
-  # def edit
-  #   @post_comment = PostComment.find(params[:id])
-  # end
-
-  # def update
-  #   @post_comment = PostComment.find(params[:id])
-  #   @user = current_user
-  #   @post_comment.update!(post_comment_params)
-  #   redirect_to request.referer
-  # end
 
   private
 

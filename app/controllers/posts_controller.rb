@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  # deviseのヘルパーメソッド
+  before_action :authenticate_user!, only: [:destroy, :destroy_from_user_show]
+  
   def new
     @post = Post.new
   end
@@ -10,8 +13,11 @@ class PostsController < ApplicationController
       # ログイン中のユーザー情報を取得
       @post.user_id = current_user.id
     end
-    @post.save
-    redirect_to posts_path
+    if @post.save
+      redirect_to posts_path
+    else
+      render 'new'
+    end
   end
 
   def index
@@ -25,16 +31,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
   end
-
-  # def edit
-  #   @post = Post.find(params[:id])
-  # end
-
-  # def update
-  #   @post = Post.find(params[:id])
-  #   @post.update(post_params)
-  #   redirect_to post_path(@post.id)
-  # end
 
   def destroy
     @post = Post.find(params[:id])

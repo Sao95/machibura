@@ -9,11 +9,11 @@
       住所 / 地名 / 駅名：<%= favorite.post.address %><br>
       投稿文：<%= favorite.post.writings %><br>
       ユーザー：<%= user_name(favorite.post.user) %><br>
+      <%#= favorite.created_at.strftime('%Y/%m/%d') %>
+      <%= link_to "詳細",  post_path(favorite.post.id) %><br>
       <div id="favorite_btn_<%= favorite.post.id %>" class="favorite_btn, float-left">
         <%= render "favorites/favorite_btn", post: favorite.post %>
-      </div><br>
-      <%#= favorite.created_at.strftime('%Y/%m/%d') %>
-      <%= link_to "詳細",  post_path(favorite.post.id) %>
+      </div>
     </td>
   </table>
 <% end %>

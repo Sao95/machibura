@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        address: 住所 / 地名 / 駅名
+        writings: 投稿内容

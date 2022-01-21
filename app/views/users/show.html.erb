@@ -10,7 +10,7 @@
   <div class=”container”>
     <div class="row-fluid">
       <div class="col-3, link">
-      <% if user_signed_in? && @user.id == current_user.id %>
+      <% if @user.id == current_user.id %>
         <p><%= link_to "ユーザー名変更", edit_user_path(@user) %></p>
         <p><%= link_to "コメント履歴",  user_post_comments_path(@user) %></p>
         <p><%= link_to "お気に入り履歴",  user_favorites_path(@user) %></p>

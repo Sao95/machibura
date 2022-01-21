@@ -7,6 +7,9 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  
+  validates :address, presence: true
+  validates :writings, presence: true, length: {maximum: 500 }
 
   # 引数で渡されたユーザidがFavoritesテーブル内に存在（exists?）するかどうかを調べる
   def favorited_by?(user)

@@ -97,3 +97,5 @@ gem 'ransack'
 # デバッグ
 gem 'pry-byebug'
 gem 'pry-rails'
+
+gem "rails-i18n"

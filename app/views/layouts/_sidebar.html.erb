@@ -9,6 +9,7 @@
 <div class="text-left">
   <p><%= link_to '投稿フォーム', new_post_path %></p>
   <% if user_signed_in? %>
+  <!--@userはapplicationコントローラーでcurrent_userに設定している-->
   <p class="index_link">
     <%= link_to "コメント履歴",  user_post_comments_path(@user) %><br>
     <%= link_to "お気に入り履歴",  user_favorites_path(@user) %>

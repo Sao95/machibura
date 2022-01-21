@@ -25,15 +25,18 @@
   min-height: 100vh;
 }
 #wrapper .container-fluid {
-  padding-top: 70px;
+  padding-top: 75px;
   z-index: 1;
   margin: 0;
   position: relative;
 }
+.application_row {
+  padding-top: 10px;
+}
 .main_content {
   display: inline-block;
   width: 75%;
-  margin-left: 25%;
+  margin-left: 22%;
 }
 
 // _header.html.erb
@@ -55,22 +58,38 @@ header {
   height: 50px;
   justify-content: flex-end;
 }
+.navbar-collapse {
+  padding: 15px;
+  background-color: white;
+}
 .navbar li {
   padding-top: 10%;
 }
 li a {
   color: #523f27;
 }
+#application_flash_message {
+  position: fixed;
+  margin-left: 2%;
+  color: #237540;
+}
+#flash_message p {
+  color: #f78f20;
+}
+.error_messages {
+  color: #d60000;
+}
 
 // _sidebar.html.erb
 .sidebar {
   display: inline-block;
   position: fixed;
-  width: 18%;
-  padding: 0 0 0 3%;
+  width: 17%;
+  padding: 0 0 0 1%;
 }
 .sidebar .search {
   margin-top: 10px;
+  padding-top: 15px;
 }
 .sidebar .index_link {
   margin-top: 10px;
@@ -125,5 +144,5 @@ footer {
 }
 
 p {
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
