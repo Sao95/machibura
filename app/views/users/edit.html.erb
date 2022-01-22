@@ -4,6 +4,13 @@
   <div class="text">
     <h2>ユーザー名変更</h2>
     <%= form_with model:@user, local:true do |f| %>
+      <% if flash[:error].present? %>
+        <div class="error_messages">
+          <% flash[:error].each do |e| %>
+            <li><%= e %>
+          <% end %>
+        </div>
+      <% end %>
       <p class="space"><h5>ユーザー名</h5></p>
       <div class="space"><%= f.text_field :name, autofocus: true, placeholder:"ニックネーム" %></div>
       <div class="space"><%= f.submit "変更を保存" %></div>

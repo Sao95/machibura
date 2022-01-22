@@ -15,7 +15,10 @@ class PostCommentsController < ApplicationController
       @post_comment = PostComment.new(post_comment_params)
       @post_comment.post_id = @post.id
     end
-    @post_comment.save
+    if @post_comment.save
+    else
+      redirect_to post_path(@post), flash: { error: @post_comment.errors.full_messages }
+    end
   end
   
   # 非同期通信

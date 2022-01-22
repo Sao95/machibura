@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!,except: [:index, :show]
 
   def index
-    redirect_to request.referer
+    redirect_to new_user_registration_path
   end
 
   def show
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     if @user == current_user
-      render :edit
+      render 'edit'
     else
       redirect_to user_path(@user.id)
     end
@@ -22,8 +22,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+    if @user.update(user_params)
+      redirect_to user_path(@user.id)
+    else
+      redirect_to edit_user_path(@user), flash: { error: @user.errors.full_messages }
+    end
   end
 
   # 退会確認画面
@@ -37,7 +40,7 @@ class UsersController < ApplicationController
     if @user.update(is_deleted: true)
       reset_session
       redirect_to root_path
-      flash[:notice] = "退会しました"
+      flash[:withdraw] = "退会しました"
     end
   end
 

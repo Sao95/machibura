@@ -6,15 +6,18 @@
 .registrations {
   display: block;
   text-align:center;
-  margin-top: 5%;
-  margin-right: 25%;
+  padding: 7% 35% 0 15%;
 }
 .registrations .text {
 	text-align: left;
 	display: inline-block;
+	width: 50%;
 }
-.registration_actions {
-  margin: 5px;
+.registrations .error_messages {
+  width: 300px;
+}
+.registrations .btn {
+  padding: 8px 0 5px 0;
 }
 
 // devise/sessions/new.html.erb
@@ -28,8 +31,7 @@
 	display: inline-block;
 	width: 50%;
 }
-.alert {
-  color: #d60000;
+.sessions .error_messages {
   width: 300px;
   left: -10%;
 }
@@ -61,15 +63,19 @@
 .edit_user {
   display: block;
   text-align:center;
-  margin-right: 30%;
-  margin-top: 10%;
+  padding: 10% 35% 0 15%;
 }
 .edit_user .text {
 	text-align: left;
 	display: inline-block;
+	width: 50%;
 }
 .edit_user .space {
   margin-bottom: 10px;
+}
+.edit_user .error_messages {
+  width: 300px;
+  left: -10%;
 }
 
 // unsubscribe.html.erb

@@ -1,6 +1,11 @@
 ja:
   activerecord:
     attributes:
+      user:
+        name: ユーザー名
+        email: メールアドレス
       post:
         address: 住所 / 地名 / 駅名
         writings: 投稿内容
+      post_comment:
+        comment: コメント

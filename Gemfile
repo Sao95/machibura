@@ -99,3 +99,4 @@ gem 'pry-byebug'
 gem 'pry-rails'
 
 gem "rails-i18n"
+gem 'devise-i18n'

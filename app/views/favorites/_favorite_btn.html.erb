@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
   <% if post.favorited_by?(current_user) %>
-    <div id="flash_message"><p><%= notice %></p></div>
+    <div id="flash_message"><p><%= flash.now[:favorite] %></p></div>
     <!--お気に入り-->
     <%= link_to post.favorites.count, post_favorites_path(post), method: :delete, remote: true, class: "fas fa-star star_orange" %>
   <% else %>
-    <div id="flash_message"><p><%= notice %></p></div>
+    <div id="flash_message"><p><%= flash.now[:favorite] %></p></div>
     <!--お気に入り-->
     <%= link_to post.favorites.count, post_favorites_path(post), method: :post, remote: true, class: "fas fa-star star_gray" %>
   <% end %>

@@ -1,4 +1,20 @@
 <%= form_with(model:[post, post_comment]) do |f| %>
-  <%= f.text_area :comment, size:"30x2",placeholder: "コメント" %>
+
+  <% if flash[:error].present? %>
+    <div class="error_messages">
+      <% flash[:error].each do |e| %>
+        <%= e %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <%= f.text_area :comment, size:"30x2",placeholder: "コメント" %><br>
   <%= f.submit "送信する" %>
+  
 <% end %>
+
+<script>
+  $(function() {
+    setTimeout("$('.error_messages').fadeOut('slow')", 5000);
+  });
+</script>
