@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   sessions: 'users/sessions'
   }
   
+  # get '/users' => redirect("/users/sign_up")
   resources :users, only: [:index, :show, :edit, :update] do
     resources :post_comments, only: [:index] do
       member do

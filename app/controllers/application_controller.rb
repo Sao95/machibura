@@ -4,11 +4,16 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
   before_action :find_current_user
-  # after_action :users_path
 
   def after_sign_in_path_for(resource)
     flash[:success] = "ようこそ#{current_user.name}さん"
     posts_path
+  end
+  
+  def error_after_sign_up
+    if sign_up!
+      redirect_to request.referer
+    end
   end
 
   # sidebarのコメント履歴、お気に入り履歴リンクのuser.id
@@ -20,12 +25,6 @@ class ApplicationController < ActionController::Base
     # 検索オブジェクト
     @search = Post.ransack(params[:q])
   end
-  
-  # def users_path
-  #   if redirect_to users_path
-  #     redirect_to request.referer
-  #   end
-  # end
 
   protected
 
