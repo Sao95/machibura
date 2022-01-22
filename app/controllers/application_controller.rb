@@ -9,12 +9,6 @@ class ApplicationController < ActionController::Base
     flash[:success] = "ようこそ#{current_user.name}さん"
     posts_path
   end
-  
-  def error_after_sign_up
-    if sign_up!
-      redirect_to request.referer
-    end
-  end
 
   # sidebarのコメント履歴、お気に入り履歴リンクのuser.id
   def find_current_user
