@@ -21,12 +21,17 @@
 .sessions {
   display: block;
   text-align: center;
-  margin-top: 10%;
-  margin-right: 35%;
+  padding: 10% 35% 0 15%;
 }
 .sessions .text {
 	text-align: left;
 	display: inline-block;
+	width: 50%;
+}
+.alert {
+  color: #d60000;
+  width: 300px;
+  left: -10%;
 }
 
 // show.html.erb
