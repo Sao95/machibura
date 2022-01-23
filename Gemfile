@@ -98,5 +98,11 @@ gem 'ransack'
 gem 'pry-byebug'
 gem 'pry-rails'
 
+# 日本語化
 gem "rails-i18n"
 gem 'devise-i18n'
+
+# 静的コード解析ツール
+gem 'rubocop', require:false
+gem 'rubocop-rails', require:false
+gem 'rubocop-performance', require:false

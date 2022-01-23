@@ -16,6 +16,7 @@ class PostCommentsController < ApplicationController
       @post_comment.post_id = @post.id
     end
     if @post_comment.save
+      # flash[:create_comment] = "コメントしました"
     else
       redirect_to post_path(@post), flash: { error: @post_comment.errors.full_messages }
     end
