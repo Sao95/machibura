@@ -25,23 +25,24 @@
   min-height: 100vh;
 }
 #wrapper .container-fluid {
-  padding-top: 75px;
+  padding-top: 65px;
   z-index: 1;
   margin: 0;
   position: relative;
 }
 .application_row {
-  padding-top: 10px;
+  padding-top: 15px;
 }
 .main_content {
   display: inline-block;
   width: 75%;
+  padding-top: 10px;
   margin-left: 22%;
 }
 
 // _header.html.erb
 header {
-  padding: 10px 0 5px 0;
+  padding: 10px 0 0 0;
   position: fixed;
   z-index: 2;
   height: 65px;
@@ -70,14 +71,8 @@ li a {
 }
 #application_flash_message {
   position: fixed;
-  margin-left: 2%;
+  padding: 10px 0 0 3%;
   color: #237540;
-}
-#flash_message p {
-  color: #f78f20;
-}
-.error_messages {
-  color: #d60000;
 }
 
 // _sidebar.html.erb
@@ -145,4 +140,8 @@ footer {
 
 p {
   margin-bottom: 0;
+}
+
+.error_messages {
+  color: #d60000;
 }
