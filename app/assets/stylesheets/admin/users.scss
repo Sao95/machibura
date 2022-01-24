@@ -1,0 +1,21 @@
+// Place all the styles related to the admin/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin_users {
+  width: 80%;
+  margin-left: 3%;
+}
+.admin_users .table{
+  margin-top: 10px;
+}
+
+.admin_user_show {
+  margin-left: 3%;
+}
+.admin_user_show .table {
+  margin-top: 10px;
+}
+.admin_user_show .posts {
+  margin-top: 5%;
+}

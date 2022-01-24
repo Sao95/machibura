@@ -6,8 +6,12 @@ class ApplicationController < ActionController::Base
   before_action :find_current_user
 
   def after_sign_in_path_for(resource)
-    flash[:success] = "ようこそ#{current_user.name}さん"
-    posts_path
+    if admin_signed_in?
+      admin_users_path
+    else
+      flash[:success] = "ようこそ#{current_user.name}さん"
+      posts_path
+    end
   end
 
   # sidebarのコメント履歴、お気に入り履歴リンクのuser.id

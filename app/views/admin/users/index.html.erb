@@ -1,0 +1,30 @@
+<!--並べ替え-->
+<div class="admin_users">
+  <h4>会員一覧</h4>
+  <table class="table table-bordered table-sm row-fluid">
+    <tr >
+      <th class="col-2">会員ID</th>
+      <th class="col-2">ユーザー名</th>
+      <th class="col-3">メールアドレス</th>
+      <th class="col-2">ステータス</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td class="col-2"><%= user.id %></td>
+      <td class="col-2">
+        <%= link_to admin_user_path(user) do %>
+          <%= user.name %>
+        <% end %>
+      </td>
+      <td class="col-3"><%= user.email %></td>
+      <% if user.is_deleted == false %>
+        <td class="col-2">有効</td>
+      <% else %>
+        <td class="col-2">退会</td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= paginate @users %>

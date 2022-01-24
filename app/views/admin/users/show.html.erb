@@ -1,0 +1,54 @@
+<div class="admin_user_show">
+  <div class="containew">
+  <div class="notice"><%= notice %></div>
+  <div class="error_messages"><%= alert %></div>
+    <%= form_with model: @user,url: admin_user_path(@user), local:true do |f| %>
+    <table class=”row-fluid”>
+      <tr>
+        <th class="col-2">会員ID</th>
+        <th class="col-2">ユーザー名</th>
+        <th class="col-3">メールアドレス</th>
+        <th class="col-2">ステータス</th>
+      </tr>
+      <tr>
+        <td class="col-2"><%= @user.id %></td>
+        <td  class="col-2">
+          <%= link_to admin_user_path(@user) do %>
+            <%= @user.name %>
+          <% end %>
+        </td>
+        <td  class="col-3">
+          <%= f.email_field :email %>
+        </td>
+        <td  class="col-2">
+          <label><%= f.radio_button :is_deleted?, false, checked: true %>有効</label>
+          <label><%= f.radio_button :is_deleted, true %>退会</label>
+        </td>
+        <td>
+          <%= f.submit "変更を保存", class: "btn btn-success" %>
+          ・<%= link_to "削除", admin_user_path(@user), method: :delete, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+  <div class="posts">
+    <h5>投稿一覧履歴</h5>
+    <% @posts.each do |post| %>
+    <table class=”row”>
+      <td class="col-md-3, margin-0"><%= attachment_image_tag post, :image,size:"150x100", fallback:"no_image_square.jpg" %></td>
+      <!--asset_path(no_image_square.jpg)-->
+      <td class="col-md-9">
+        投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
+        住所 / 地名 / 駅名：<%= post.address %><br>
+        投稿文：<%= post.writings%><br>
+        <%#= link_to "詳細",  admin_post_path(post.id) %>
+        <%#= link_to "編集", admin_edit_post_path(@post) %>
+        / <%#= link_to "削除", admin_post_path(post), method: :delete %>
+      </td>
+    </table>
+    <% end %>
+  </div>
+</div>
+
+<%= paginate @posts %>
