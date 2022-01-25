@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   
   # 特定のコントローラーがどこに存在するかを指定する
-  devise_for :admin, skip: [:passwords], controllers: {
-    registrations: "admin/registrations",
+  devise_for :admin, skip: [:passwords, :registrations], controllers: {
     sessions: "admin/sessions"
   }
   
