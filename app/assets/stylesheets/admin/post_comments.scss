@@ -1,3 +1,11 @@
 // Place all the styles related to the admin/post_comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#admin_post_comments .row-fluid {
+  width: 100%;
+  margin-bottom: 15px;
+}
+#admin_post_comments .row {
+  width: 100%;
+}

@@ -9,7 +9,13 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto ">
         <!--<%# if user_signed_in? %> → devise側で用意しているヘルパー-->
-        <% if user_signed_in? %>
+        <% if admin_signed_in? %>
+          <li><%= link_to "Home", root_path %></li>
+          <li>/ <%= link_to "会員一覧", admin_users_path %></li>
+          <li>/ <%= link_to "投稿一覧", admin_posts_path %></li>
+          <li>/ <%= link_to "コメント一覧", admin_post_comments_path %></li>
+          <li>/ <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+        <% elsif user_signed_in? %>
           <li><%= link_to "Home", root_path %></li>
           <li>/ <%= link_to "マイページ", user_path(current_user) %></li>
           <li>/ <%= link_to "投稿一覧", posts_path %></li>

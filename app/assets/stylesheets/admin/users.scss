@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// admin/sessions/new.html.erb
+.admin_sessions {
+  display: block;
+  text-align: center;
+  padding: 5% 35% 0 15%;
+}
+.admin_sessions .text {
+	text-align: left;
+	display: inline-block;
+	width: 50%;
+}
+.admin_sessions .error_messages {
+  width: 300px;
+  left: -10%;
+}
+
 .admin_users {
   width: 80%;
   margin-left: 3%;

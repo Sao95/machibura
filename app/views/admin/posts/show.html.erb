@@ -1,0 +1,48 @@
+<div class="admin_post_show">
+  <div class=”container”>
+    <div class="notice"><%= notice %></div>
+    <div class="error_messages"><%= alert %></div>
+    <table class=”row”>
+      <%= form_with model: @post,url: admin_post_path(@post), local:true do |f| %>
+      <td class="col-md-5">
+        <div class="image_area">
+          <%= attachment_image_tag @post, :image, size:"250x200", fallback:"no_image_square.jpg" %>
+          <!--asset_path(no_image_square.jpg)-->
+          <%= f.attachment_field :image %>
+        </div>
+        </td>
+        <td class="col-md-7">
+          投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %><br>
+          住所 / 地名 / 駅名：<br>
+          <%= f.text_field :address, :size=>"23" %><br>
+          投稿文：<br>
+          <%= f.text_area :writings, size:"35x3" %><br>
+          ユーザー：<%= user_name(@post.user) %>
+          <div class="btn_area">
+          <%= f.submit "変更を保存", class: "btn btn-outline-primary btn-sm" %>
+          <%= link_to "削除", admin_post_path(@post), method: :delete, class: "btn btn-outline-danger btn-sm" %>
+          </div>
+        </td>
+      <% end %>
+    </table>
+   <div class="map_and_comment_area">
+      <table class=”row”>
+        <td class="col-md-6, map"><%= render "posts/map" %></td>
+        <td class="col-md-6">
+          <div id="post_comments">
+            <div class="notice"><%= flash[:destroy] %></div>
+            <h6>コメント件数：<%= @post.post_comments.count %></h6>
+            <% @post.post_comments.each do |post_comment| %>
+            <div class="post_comments">
+              <%= post_comment.comment %><br>
+              ユーザー：<%= user_name(post_comment.user) %><br>
+              <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+              <%= link_to "削除", admin_post_comment_path(post_comment), method: :delete %>
+            <% end %>
+            </div>
+          </div>
+         </td>
+      </table>
+    </div>
+  </div>
+</div>
