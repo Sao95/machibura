@@ -94,12 +94,14 @@ gem 'geocoder'
 # 検索、ソート機能（投稿日時）
 gem 'ransack'
 
+gem "enum_help"
+
 # デバッグ
 gem 'pry-byebug'
 gem 'pry-rails'
 
 # 日本語化
-gem "rails-i18n"
+gem 'rails-i18n'
 gem 'devise-i18n'
 
 # 静的コード解析ツール

@@ -8,6 +8,7 @@
 </div>
 <div class="text-left">
   <p><%= link_to '投稿フォーム', new_post_path %></p>
+  <p><%= link_to 'お問い合わせ', new_contact_path %></p>
   <% if user_signed_in? %>
   <!--@userはapplicationコントローラーでcurrent_userに設定している-->
   <p class="index_link">

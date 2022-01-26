@@ -1,0 +1,42 @@
+<table class="table table-hover">
+    <tr>
+      <th width="15%">お名前</th>
+      <td width="85%"><%= @contact.name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @contact.email %></td>
+    </tr>
+    <tr>
+      <th>要件</th>
+      <td><%= @contact.subject %></td>
+    </tr>
+    <tr>
+      <th>メッセージ</th>
+      <td><%= @contact.message %></td>
+    </tr>
+</table>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="20%">
+      <%= form_with model: @contact, url: back_contacts_path, local: true do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :subject_i18n %>
+        <%= f.hidden_field :message %>
+        <%= f.submit '入力画面に戻る' %>
+      <% end %>
+    </td>
+    <td width="15%">
+      <%= form_with model: @contact do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :subject_i18n %>
+        <%= f.hidden_field :message %>
+        <%= f.submit '送信' %>
+      <% end %>
+    </td>
+    <td width="40%"></td>
+  </tr>
+</table>

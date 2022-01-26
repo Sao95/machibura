@@ -1,13 +1,20 @@
 ja:
+  enums:
+    contact:
+      subject:
+        users: '会員について'
+        posts: '投稿について'
+        post_comments: '投稿コメントについて'
+        others: 'その他'
   activerecord:
     attributes:
       admin:
-        email: メールアドレス
+        email: 'メールアドレス'
       user:
-        name: ユーザー名
-        email: メールアドレス
+        name: 'ユーザー名'
+        email: 'メールアドレス'
       post:
-        address: 住所 / 地名 / 駅名
-        writings: 投稿内容
+        address: '住所 / 地名 / 駅名'
+        writings: '投稿内容'
       post_comment:
-        comment: コメント
+        comment: 'コメント'
