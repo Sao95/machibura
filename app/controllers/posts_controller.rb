@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # deviseのヘルパーメソッド
   before_action :authenticate_user!, only: [:destroy, :destroy_from_user_show]
-  
+
   def new
     @post = Post.new
   end
@@ -37,11 +37,15 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
-  
+
   def destroy_from_user_show
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to request.referer
+  end
+
+  def runking
+    @posts = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
   end
 
   private

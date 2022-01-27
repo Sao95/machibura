@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   patch 'withdraw' => 'users#withdraw', as: 'withdraw'
 
   resources :posts, only: [:index, :new, :create, :show, :destroy] do
+    collection do
+      get 'runking'
+    end
     member do
       delete 'destroy_from_user_show'
     end
@@ -40,7 +43,7 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
   end
   get 'search', to: 'posts#search'
-
+  
   resources :contacts, only: [:new, :create] do
     collection do
       post 'confirm', to: 'contacts#confirm'
