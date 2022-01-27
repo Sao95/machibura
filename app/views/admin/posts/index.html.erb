@@ -13,20 +13,18 @@
   <div class="notice"><%= notice %></div>
   <div class="error_messages"><%= alert %></div>
   <% @posts.each do |post| %>
-  <table class=”row”>
-    <td class="col-4">
-      <div><%= attachment_image_tag post, :image,size:"200x160", fallback:"no_image_square.jpg" %></div>
-    </td>
-    <!--asset_path(no_image_square.jpg)-->
-    <td class="col-8">
-      投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
-      住所 / 地名 / 駅名：<%= post.address %><br>
-      投稿文：<%= post.writings %><br>
-      ユーザー：<%= user_name(post.user) %><br>
-      コメント件数：<%= post.post_comments.count %><br>
-      <div class="link"><%= link_to "詳細",  admin_post_path(post.id) %> / <%= link_to "削除", admin_post_path(post), method: :delete %></div>
-    </td>
-  </table>
+    <div class="box_container">
+      <div class="box"><%= attachment_image_tag post, :image,size:"200x160", fallback:"no_image_square.jpg" %></div>
+      <!--asset_path(no_image_square.jpg)-->
+      <div class="box">
+        投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
+        住所 / 地名 / 駅名：<%= post.address %><br>
+        投稿文：<%= post.writings.truncate(30) %><br>
+        ユーザー：<%= user_name(post.user) %><br>
+        コメント件数：<%= post.post_comments.count %><br>
+        <%= link_to "詳細",  admin_post_path(post.id) %> / <%= link_to "削除", admin_post_path(post), method: :delete %>
+      </div>
+    </div>
   <% end %>
 </div>
 

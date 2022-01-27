@@ -5,6 +5,13 @@
 .search {
   text-align: right;
 }
+.box_container{
+  overflow: hidden;
+}
+.box{
+  float: left;
+  margin-right: 10px;
+}
 
 .admin_post_show .btn_area{
   text-align: end;
