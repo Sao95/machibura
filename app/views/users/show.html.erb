@@ -29,7 +29,7 @@
         <td class="col-md-9">
           投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
           住所 / 地名 / 駅名：<%= post.address %><br>
-          投稿文：<%= post.writings%><br>
+          投稿文：<%= post.writings.truncate(30) %><br>
           <%= link_to "詳細",  post_path(post.id) %>
           <% if post.user == current_user %>
             <%#= link_to "編集", edit_post_path(@post) %>
