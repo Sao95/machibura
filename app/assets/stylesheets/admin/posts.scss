@@ -5,12 +5,12 @@
 .search {
   text-align: right;
 }
-.box_container{
-  overflow: hidden;
+.posts {
+  border-top-style: dashed;
+  border-color: #bdae99;
 }
-.box{
-  float: left;
-  margin-right: 10px;
+.col-7 {
+  padding-top: 10px;
 }
 
 .admin_post_show .btn_area{

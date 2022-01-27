@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <th>要件</th>
-      <td><%= @contact.subject %></td>
+      <td><%= @contact.subject_i18n %></td>
     </tr>
     <tr>
       <th>メッセージ</th>
@@ -31,7 +31,7 @@
         <% end %>
       </td>
       <td width="15%">
-        <%= form_with model: @contact do |f| %>
+        <%= form_with model: @contact, url: contacts_path, local: true do |f| %>
           <%= f.hidden_field :name %>
           <%= f.hidden_field :email %>
           <%= f.hidden_field :subject_i18n %>
