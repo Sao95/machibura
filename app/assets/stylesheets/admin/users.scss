@@ -18,9 +18,11 @@
   left: -10%;
 }
 
-.admin_users {
+.admin_users .table {
   width: 80%;
-  margin-left: 3%;
+}
+.search {
+  text-align: right;
 }
 .admin_users .table{
   margin-top: 10px;

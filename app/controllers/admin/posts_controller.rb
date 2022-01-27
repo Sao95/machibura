@@ -2,7 +2,8 @@ class Admin::PostsController < ApplicationController
   before_action :authenticate_admin!
   
   def index
-    @posts = Post.all.page(params[:page]).reverse_order
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.page(params[:page]).reverse_order
   end
 
   def show

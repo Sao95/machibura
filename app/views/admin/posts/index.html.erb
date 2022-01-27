@@ -1,5 +1,15 @@
 <!--並べ替え-->
 <div class=”admin_posts”>
+  <div class="search">
+    <%= search_form_for @q, url: admin_posts_path do |f| %>
+    <div class="row">
+      <div class="col-8"></div>
+      <%#= f.label :address_or_writings_or_user_name_cont, "Keyword" %>
+      <div class="col-3"><%= f.search_field :address_or_writings_or_user_name_cont, class: 'form-control', placeholder: '検索ワード', required: true %></div>
+      <div class="col-1"><%= f.submit '検索', class: 'btn btn-primary' %></div>
+    </div>
+    <% end %>
+  </div>
   <div class="notice"><%= notice %></div>
   <div class="error_messages"><%= alert %></div>
   <% @posts.each do |post| %>

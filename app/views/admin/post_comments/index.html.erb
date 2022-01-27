@@ -1,4 +1,14 @@
 <div id="admin_post_comments">
+  <div class="search">
+    <%= search_form_for @q, url: admin_post_comments_path do |f| %>
+    <div class="row">
+      <div class="col-8"></div>
+      <%#= f.label :address_or_writings_or_user_name_cont, "Keyword" %>
+      <div class="col-3"><%= f.search_field :comment_or_user_name_cont, class: 'form-control', placeholder: '検索ワード', required: true %></div>
+      <div class="col-1"><%= f.submit '検索', class: 'btn btn-primary' %></div>
+    </div>
+    <% end %>
+  </div>
   <div class="container">
     <h4>コメント一覧</h4>
     <div class="notice"><%= flash[:destroy] %></div>
@@ -17,10 +27,7 @@
             <p>住所 / 地名 / 駅名：<%= post_comment.post.address %></p>
             <p>投稿文：<%= post_comment.post.writings%></p>
             <p>
-              ユーザー：
-              <%= link_to admin_user_path(post_comment.post.user.id) do %>
-                <%= post_comment.post.user.name %>
-              <% end %>
+              ユーザー：<%= user_name(post_comment.post.user) %>
             </p>
           </td>
           <td class="col-2">

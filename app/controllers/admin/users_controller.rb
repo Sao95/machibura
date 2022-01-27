@@ -2,7 +2,8 @@ class Admin::UsersController < ApplicationController
   before_action :authenticate_admin!
   
   def index
-    @users = User.all.page(params[:page]).reverse_order
+    @q = User.ransack(params[:q])
+    @users = @q.result.page(params[:page]).reverse_order
   end
   
   def show

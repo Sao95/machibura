@@ -2,7 +2,8 @@ class Admin::PostCommentsController < ApplicationController
   before_action :authenticate_admin!
   
   def index
-    @post_comments = PostComment.all.page(params[:page]).reverse_order
+    @q = PostComment.ransack(params[:q])
+    @post_comments = @q.result.page(params[:page]).reverse_order
   end
   
   def destroy

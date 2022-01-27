@@ -1,5 +1,15 @@
 <!--並べ替え-->
 <div class="admin_users">
+  <div class="search">
+    <%= search_form_for @q, url: admin_users_path do |f| %>
+    <div class="row">
+      <div class="col-8"></div>
+      <%#= f.label :address_or_writings_or_user_name_cont, "Keyword" %>
+      <div class="col-3"><%= f.search_field :name_or_email_or_is_deleted_cont, class: 'form-control', placeholder: '検索ワード', required: true %></div>
+      <div class="col-1"><%= f.submit '検索', class: 'btn btn-primary' %></div>
+    </div>
+    <% end %>
+  </div>
   <h4>会員一覧</h4>
   <table class="table table-bordered table-sm row-fluid">
     <tr>
