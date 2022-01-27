@@ -5,7 +5,7 @@
 <div class=”container”>
 <% @posts.each do |post| %>
   <table class=”row”>
-    <td class="col-md-4"><%= attachment_image_tag post, :image,size:"350x250", fallback:"no_image_square.jpg" %></td>
+    <td class="col-md-4"><%= attachment_image_tag post, :image, size:"350x250", fallback:"no_image_square.jpg" %></td>
     <!--asset_path(no_image_square.jpg)-->
     <td class="col-md-8">
       投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
