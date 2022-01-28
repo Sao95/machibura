@@ -1,18 +1,32 @@
 <div class="top_text">
-  <h2>machiburaへようこそ</h2>
-  <p>このサイトは、街ブラ記録、共有サイトです。</p>
-  <p>街ブラの思い出を記録したり、共有したりし、<br>
-    また、様々な方の視点からその街の新たな魅力を知るきっかけになれば幸いです。</p>
-  <p>会員でない方も投稿、コメントができます。お気軽にご利用ください。</p>
-  <span class="small">会員登録でできること<br>
-    お気に入り機能 / 登録後の投稿・コメントの削除 / 登録後の投稿コメントの履歴閲覧</span>
+  <h2>
+    Machiburaへようこそ
+    <i class="fas fa-shoe-prints fa-rotate-270 "></i>
+  </h2>
+  <p>このサイトは、街ブラ記録、共有サイトです。<br>
+    街ブラの思い出を記録したり、共有したりし、<br>
+    また、様々な方の視点からその街の新たな魅力を知るきっかけになれば幸いです。<br>
+    会員でない方も投稿、コメントができます。お気軽にご利用ください。
+  </p>
+  <p class="small">
+    会員登録でできること：<br>
+    お気に入り機能 / 登録後の投稿・コメントの削除 / 登録後の投稿・コメント・お気に入りの履歴閲覧
+  </p>
 </div>
 <div class="top_img">
-<div class="bxslider">
-  <% @posts.each do |post| %>
-  <ul>
-    <li><%= attachment_image_tag post, :image,size:"450x300", fallback:"no_image_square.jpg" %></li>
-  </ul>
-  <% end %>
+  <div class="bxslider">
+    <div><%#= image_tag 'logo.jpg', size: '450x300' %></div>
+    <% @posts.each do |post| %>
+      <div><%= attachment_image_tag post, :image,size:"450x300", fallback:"no_image_square.jpg" %></div>
+    <% end %>
+  </div>
 </div>
-</div>
+
+<script>
+  $(function() {
+    $('.bxslider').bxSlider({
+      auto: true,
+		  slideWidth: 450,
+    });
+  });
+</script>

@@ -16,6 +16,13 @@
   margin-bottom: 10px;
 }
 
+.posts_index p {
+  margin-bottom: 5px;
+}
+.posts_index td {
+  border-bottom: dashed 1px #a6a6a6;
+}
+
 // show.html.erb
 .post_show .row {
   padding: 0;
@@ -45,4 +52,10 @@
 
 .posts_ranking .containt {
   margin-bottom: 15px;
+}
+.posts_ranking .row {
+  width: 910px;
+}
+.posts_ranking tbody {
+  border-bottom: dashed 1px #a6a6a6;
 }

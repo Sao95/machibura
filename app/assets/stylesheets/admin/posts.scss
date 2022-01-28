@@ -6,8 +6,7 @@
   text-align: right;
 }
 .posts {
-  border-top-style: dashed;
-  border-color: #bdae99;
+  border-bottom: dashed 1px #a6a6a6;
 }
 .col-7 {
   padding-top: 10px;
@@ -15,6 +14,7 @@
 
 .admin_post_show .btn_area{
   text-align: end;
+  margin: 0 6% 10px 0;
 }
 .admin_post_show .map_and_comment_area {
   margin-top: 50px;

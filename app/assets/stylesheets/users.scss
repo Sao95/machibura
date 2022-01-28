@@ -6,7 +6,7 @@
 .registrations {
   display: block;
   text-align:center;
-  padding: 7% 35% 0 15%;
+  padding: 5% 35% 0 15%;
 }
 .registrations .text {
 	text-align: left;
@@ -24,7 +24,7 @@
 .sessions {
   display: block;
   text-align: center;
-  padding: 10% 35% 0 15%;
+  padding: 7% 35% 0 15%;
 }
 .sessions .text {
 	text-align: left;
@@ -47,12 +47,12 @@
 }
 .user_show .link {
   position: fixed;
-  margin-top: 7%;
+  margin-top: 5%;
   z-index: 1;
 }
 .user_posts {
   position: relative;
-  padding-top: 10%;
+  padding-top: 8%;
   margin-left: 20%;
 }
 .user_post {
@@ -63,7 +63,7 @@
 .edit_user {
   display: block;
   text-align:center;
-  padding: 10% 35% 0 15%;
+  padding: 7% 35% 0 15%;
 }
 .edit_user .text {
 	text-align: left;
@@ -79,16 +79,13 @@
 }
 
 // unsubscribe.html.erb
-.withdraw {
-  display: block;
-  text-align: center;
-  margin-top: 10%;
-  margin-right: 25%;
+.unsubscribe {
+  margin-top: 7%;
+  margin-left: 20%;
 }
-.withdraw .text {
+.unsubscribe .text {
   text-align: left;
-	display: inline-block;
 }
-.withdraw .btns {
-  margin-top: 10px;
+.unsubscribe .btns {
+  margin: 3% 0 0 10%;
 }

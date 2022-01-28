@@ -7,27 +7,27 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto ">
+        <div class="navbar-nav ml-auto ">
         <!--<%# if user_signed_in? %> → devise側で用意しているヘルパー-->
         <% if admin_signed_in? %>
-          <li><%= link_to "Home", root_path %></li>
-          <li>/ <%= link_to "会員一覧", admin_users_path %></li>
-          <li>/ <%= link_to "投稿一覧", admin_posts_path %></li>
-          <li>/ <%= link_to "コメント一覧", admin_post_comments_path %></li>
-          <li>/ <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+          <span class="btn"><%= link_to "Home", root_path %></span>
+          <span class="btn"><%= link_to "会員一覧", admin_users_path %></span>
+          <span class="btn"><%= link_to "投稿一覧", admin_posts_path %></span>
+          <span class="btn"><%= link_to "コメント一覧", admin_post_comments_path %></span>
+          <span class="btn"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></span>
         <% elsif user_signed_in? %>
-          <li><%= link_to "Home", root_path %></li>
-          <li>/ <%= link_to "マイページ", user_path(current_user) %></li>
-          <li>/ <%= link_to "投稿一覧", posts_path %></li>
+          <span class="btn"><%= link_to "Home", root_path %></span>
+          <span class="btn"><%= link_to "マイページ", user_path(current_user) %></span>
+          <span class="btn"><%= link_to "投稿一覧", posts_path %></span>
           <!--method: :deleteでdestroy_user_session_pathへルーティングさせる-->
-          <li>/ <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <span class="btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></span>
         <% else %>
-          <li><%= link_to "Home", root_path %></li>
-          <li>/ <%= link_to "投稿一覧", posts_path %></li>
-          <li>/ <%= link_to "新規登録", new_user_registration_path %></li>
-          <li>/ <%= link_to "ログイン", new_user_session_path %></li>
+          <span class="btn"><%= link_to "Home", root_path %></span>
+          <span class="btn"><%= link_to "投稿一覧", posts_path %></span>
+          <span class="btn"><%= link_to "新規登録", new_user_registration_path %></span>
+          <span class="btn"><%= link_to "ログイン", new_user_session_path %></span>
         <% end %>
-        </ul>
+        </div>
       </div>
     <!--</div>-->
   </nav>
