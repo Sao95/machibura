@@ -65,6 +65,7 @@ Rails.application.configure do
     port: '587',
     user_name: ENV['MAIL_ADDRESS'],
     password: ENV['MAIL_PASSWORD'],
+    authentication: 'plain',
     enable_starttls_auto: true
   }
   
