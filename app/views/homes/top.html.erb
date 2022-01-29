@@ -15,9 +15,8 @@
 </div>
 <div class="top_img">
   <div class="bxslider">
-    <div><%#= image_tag 'logo.jpg', size: '450x300' %></div>
     <% @posts.each do |post| %>
-      <div><%= attachment_image_tag post, :image,size:"450x300", fallback:"no_image_square.jpg" %></div>
+      <div><%= attachment_image_tag post, :image,size:"450x300", fallback:"logo2.jpg" %></div>
     <% end %>
   </div>
 </div>

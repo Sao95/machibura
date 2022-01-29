@@ -42,8 +42,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
-  get 'search', to: 'posts#search'
-  
+
   resources :contacts, only: [:new, :create] do
     collection do
       post 'confirm', to: 'contacts#confirm'
