@@ -28,6 +28,9 @@
 .post_show td {
   border-bottom: dashed 1px #a6a6a6;
 }
+.map_and_comment_area td {
+  border-bottom: none;
+}
 .post_show .image_area {
   padding-right: 20px;
 }
@@ -59,4 +62,7 @@
 }
 .posts_ranking tbody {
   border-bottom: dashed 1px #a6a6a6;
+}
+.posts_ranking p {
+  margin: 0;
 }

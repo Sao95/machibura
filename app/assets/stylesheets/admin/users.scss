@@ -34,6 +34,15 @@
 .admin_user_show .table {
   margin-top: 10px;
 }
-.admin_user_show .posts {
+.admin_user_show .post {
   margin-top: 5%;
+}
+.admin_user_show .post td {
+  padding-left: 10%;
+  border-bottom: dashed 1px #a6a6a6;
+}
+.admin_user_show .post .col-md-9 {
+  padding-left: 20%;
+  width: 700px;
+  
 }

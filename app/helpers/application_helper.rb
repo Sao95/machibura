@@ -5,13 +5,13 @@ module ApplicationHelper
       # ログインしていないユーザーの表示名を設定
       '街ブラさん'
     else
-      if user_signed_in?
-        # user.nameにユーザー詳細へのリンクを設定
-        content_tag(:a, :href => "/users/#{user.id}") do
+      if admin_signed_in?
+        content_tag(:a, :href => "/admin/users/#{user.id}") do
           concat user.name
         end
-      elsif admin_signed_in?
-        content_tag(:a, :href => "/admin/users/#{user.id}") do
+      else
+        # user.nameにユーザー詳細へのリンクを設定
+        content_tag(:a, :href => "/users/#{user.id}") do
           concat user.name
         end
       end

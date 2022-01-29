@@ -11,7 +11,7 @@
         住所 / 地名 / 駅名：<%= @post.address %><br>
         投稿文：<%= @post.writings%><br>
         ユーザー：<%= user_name(@post.user) %><br>
-        <% if @post.user == current_user %>
+        <% if @post.user == true && @post.user.id == current_user.id %>
           <%= link_to "削除", post_path(@post), method: :delete %><br>
         <% end %>
         <% if user_signed_in? %>
@@ -22,7 +22,7 @@
       </td>
     </table>
     <div class="map_and_comment_area">
-      <table class=”row”>
+      <table class=”row-fluid”>
         <td class="col-md-6, map"><%= render "posts/map" %></td>
         <td class="col-md-6">
           <div id="post_comments">

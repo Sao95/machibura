@@ -33,10 +33,8 @@
     </table>
     <% end %>
   </div>
-  <div class="posts">
+  <div class="post">
     <h5>投稿一覧履歴</h5>
-    <div class="notice"><%= notice %></div>
-    <div class="error_messages"><%= alert %></div>
     <% @posts.each do |post| %>
     <table class=”row”>
       <td class="col-md-3, margin-0"><%= attachment_image_tag post, :image,size:"150x100", fallback:"no_image_square.jpg" %></td>
@@ -44,7 +42,7 @@
       <td class="col-md-9">
         投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
         住所 / 地名 / 駅名：<%= post.address %><br>
-        投稿文：<%= post.writings%><br>
+        投稿文：<%= post.writings.truncate(30) %><br>
         <%= link_to "詳細",  admin_post_path(post.id) %>
         <%#= link_to "編集", admin_edit_post_path(@post) %>
         / <%= link_to "削除", admin_post_path(post), method: :delete %>
