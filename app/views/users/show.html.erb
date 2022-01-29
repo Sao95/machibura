@@ -24,7 +24,7 @@
       <h5>投稿一覧履歴</h5>
       <% @posts.each do |post| %>
       <table class=”row”>
-        <td class="col-md-3, margin-0"><%= attachment_image_tag post, :image,size:"150x100", fallback:"no_image_square.jpg" %></td>
+        <td class="col-md-3"><%= attachment_image_tag post, :image,size:"150x100", fallback:"no_image_square.jpg" %></td>
         <!--asset_path(no_image_square.jpg)-->
         <td class="col-md-9">
           投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>

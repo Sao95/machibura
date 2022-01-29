@@ -37,33 +37,43 @@
 }
 
 // show.html.erb
+.user_show h5 {
+  margin-bottom: 5px;
+}
 .user_name {
   position: fixed;
   top: 9%;
   padding-top: 1%;
   width: 100%;
   background-color: white;
-  z-index: 2;
+  z-index: 3;
 }
 .user_show .link {
+  overflow: hidden;
   position: fixed;
-  margin-top: 5%;
+  top: 20%;
+  left: 50;
   z-index: 1;
 }
 .user_posts {
   position: relative;
-  padding-top: 8%;
-  margin-left: 20%;
+  background-color: white;
+  margin-top: 6%;
+  left: 20%;
+  z-index: 2;
 }
 .user_post {
   margin-bottom: 10px;
+}
+.user_show td {
+  border-bottom: dashed 1px #a6a6a6;
 }
 
 // edit.html.erb
 .edit_user {
   display: block;
   text-align:center;
-  padding: 7% 35% 0 15%;
+  padding: 6% 35% 0 15%;
 }
 .edit_user .text {
 	text-align: left;

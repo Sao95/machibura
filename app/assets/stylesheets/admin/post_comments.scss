@@ -2,10 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#admin_post_comments .row-fluid {
+.admin_post_comments .row-fluid {
+  border-bottom: dashed 1px #a6a6a6;
+}
+.admin_post_comments .row-fluid {
   width: 100%;
   margin-bottom: 15px;
 }
-.search {
+.admin_post_comments .search {
   text-align: right;
 }

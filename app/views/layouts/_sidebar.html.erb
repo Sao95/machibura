@@ -10,15 +10,40 @@
   <% end %>
 
 </div>
-<div class="link_btn1">
-  <div class='btn'><i class="fas fa-pen"></i><span><%= link_to '投稿フォーム', new_post_path %></span></div>
-  <div class='btn'><i class="far fa-bell"></i><span><%= link_to 'お問い合わせ', new_contact_path %></span></div>
-  <div class='btn'><i class="fas fa-award"></i><span><%= link_to 'ランキング', runking_posts_path %></span></div>
+<div class="row link_btn1">
+  <%= link_to new_post_path do %>
+    <table class='btn'>
+      <td class='col-2'><i class="fas fa-pen"></i></td>
+      <td class='col-10'><p>投稿フォーム</p></td>
+    </table>
+  <% end %>
+  <%= link_to new_contact_path do %>
+  <table class='btn'>
+    <td class='col-2'><i class="far fa-bell"></i></td>
+    <td class='col-10'><p>お問い合わせ</p></td>
+  </table>
+  <% end %>
+  <%= link_to runking_posts_path do %>
+  <table class='btn'>
+    <td class='col-2'><i class="fas fa-award"></i></td>
+    <td class='col-10'><p>ランキング</p></td>
+  </table>
+  <% end %>
 </div>
-<div class="link_btn2">
+<div class="row link_btn2">
   <% if user_signed_in? %>
     <!--@userはapplicationコントローラーでcurrent_userに設定している-->
-    <div class='btn'><%= link_to "コメント履歴",  user_post_comments_path(@user) %></div>
-    <div class='btn'><%= link_to "お気に入り履歴",  user_favorites_path(@user) %></div>
+    <%= link_to user_post_comments_path(@user) do %>
+    <table class='btn'>
+      <td class='col-2'><span></span></td>
+      <td class='col-10'><p>コメント履歴</p></td>
+    </table>
+    <% end %>
+    <%= link_to user_favorites_path(@user) do %>
+    <table class='btn'>
+      <td class='col-2'><span></span></td>
+      <td class='col-10'><p>お気に入り履歴</p></td>
+    </table>
+    <% end %>
   <% end %>
 </div>

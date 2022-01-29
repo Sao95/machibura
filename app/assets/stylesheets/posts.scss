@@ -20,25 +20,26 @@
   margin-bottom: 5px;
 }
 .posts_index td {
+  padding: 5px 15px 5px 20px;
   border-bottom: dashed 1px #a6a6a6;
 }
 
 // show.html.erb
-.post_show .row {
-  padding: 0;
-}
-.post_show .col-md-6 {
-  padding: 0;
+.post_show td {
+  border-bottom: dashed 1px #a6a6a6;
 }
 .post_show .image_area {
   padding-right: 20px;
+}
+.post_show p {
+  margin: 0;
 }
 .map_and_comment_area {
   margin-top: 20px;
 }
 .map {
   display: inline-block;
-  margin: 0 50px 0 20px;
+  padding: 0 50px 0 20px;
 }
 #map{
   height: 250px;
