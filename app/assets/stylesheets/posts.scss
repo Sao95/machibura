@@ -55,10 +55,17 @@
 }
 
 .posts_ranking .containt {
-  margin-bottom: 15px;
+  margin-left: 2%;
 }
-.posts_ranking .row {
-  width: 910px;
+.posts_ranking .rank {
+  margin-left: 5%;
+}
+.posts_ranking .image {
+  left: 5%;
+}
+.posts_ranking .col-8 {
+  left: 2%;
+  width: 660px;
 }
 .posts_ranking tbody {
   border-bottom: dashed 1px #a6a6a6;
