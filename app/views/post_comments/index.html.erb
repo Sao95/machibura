@@ -19,7 +19,11 @@
       投稿文：<%= post_comment.post.writings.truncate(30) %><br>
       投稿日時：<%= post_comment.post.created_at.strftime('%Y/%m/%d') %><br>
       ユーザー：<%= user_name(post_comment.post.user) %><br>
-      <%= link_to "詳細",  post_path(post_comment.post.id) %>
+      <% if post_comment.post.user == current_user %>
+        <%= link_to "詳細",  post_path(post_comment.post.id) %> / <%= link_to "削除", post_path(post_comment.post.id), method: :delete %><br>
+      <% else%>
+        <%= link_to "詳細",  post_path(post_comment.post.id) %><br>
+      <% end %>
     </td>
   </table>
 <% end %>
