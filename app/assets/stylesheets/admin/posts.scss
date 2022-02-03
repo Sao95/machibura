@@ -12,6 +12,16 @@
 .col-7 {
   padding-top: 10px;
 }
+.admin_posts .label {
+  font-weight: 500;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  line-height: 1;
+  color: #2b00ff;
+  border: solid 1px #2b00ff;
+  text-align: center;
+  border-radius: .25em;
+}
 
 .admin_post_show .btn_area{
   text-align: end;
@@ -23,4 +33,14 @@
 
 .admin_post_show td {
   border-bottom: dashed 1px #a6a6a6;
+}
+.admin_post_show .label {
+  font-weight: 500;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  line-height: 1;
+  color: #2b00ff;
+  border: solid 1px #2b00ff;
+  text-align: center;
+  border-radius: .25em;
 }

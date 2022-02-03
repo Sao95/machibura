@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :tags, dependent: :destroy
   
   validates :address, presence: true
   validates :writings, presence: true, length: {maximum: 500 }

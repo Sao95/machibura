@@ -5,13 +5,18 @@
   <div class=”container”>
   <% @favorites.each do |favorite| %>
     <table class=”row”>
-      <td class="col-md-4"><%= attachment_image_tag @post, :image, size:"250x200", fallback:"no_image_square.jpg" %></td>
+      <td class="col-md-4"><%= attachment_image_tag favorite.post, :image, size:"250x200", fallback:"no_image_square.jpg" %></td>
       <td class="col-md-8">
         投稿日時：<%= favorite.post.created_at.strftime('%Y/%m/%d') %><br>
         住所 / 地名 / 駅名：<%= favorite.post.address %><br>
         投稿文：<%= favorite.post.writings.truncate(30) %><br>
         ユーザー：<%= user_name(favorite.post.user) %><br>
         <%#= favorite.created_at.strftime('%Y/%m/%d') %>
+        <div class="tag-box">
+          <% favorite.post.tags.each do |tag| %>
+            <span class="label"><%= tag.name %></span>
+          <% end %>
+        </div>
         <% if favorite.post.user == current_user %>
           <%= link_to "詳細",  post_path(favorite.post.id) %> / <%= link_to "削除", post_path(favorite.post.id), method: :delete %><br>
         <% else%>

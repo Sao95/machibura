@@ -11,6 +11,11 @@
         住所 / 地名 / 駅名：<%= @post.address %><br>
         投稿文：<%= @post.writings%><br>
         ユーザー：<%= user_name(@post.user) %><br>
+        <div class="tag-box">
+          <% @post.tags.each do |tag| %>
+            <span class="label"><%= tag.name %></span>
+          <% end %>
+        </div>
           <% if user_signed_in? && @post.user == current_user %>
           <%= link_to "削除", post_path(@post), method: :delete %><br>
         <% end %>

@@ -19,6 +19,11 @@
           投稿文：<br>
           <%= f.text_area :writings, size:"35x3" %><br>
           ユーザー：<%= user_name(@post.user) %>
+          <div class="tag-box">
+            <% @post.tags.each do |tag| %>
+              <span class="label"><%= tag.name %></span>
+            <% end %>
+          </div>
           <div class="btn_area">
           <%= f.submit "変更を保存",url: admin_post_path(@post), class: "btn btn-outline-primary btn-sm" %>
           <%= link_to "削除", admin_post_path(@post), method: :delete, class: "btn btn-outline-danger btn-sm" %>

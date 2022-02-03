@@ -13,6 +13,12 @@ class Admin::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
+      # 投稿した画像をAPI側に渡す
+      tags = Vision.get_image_data(@post.image)
+      # API側から返ってきた値をもとにタグを作成する
+      tags.each do |tag|
+      @post.tags.create(name: tag)
+    end
       flash[:notice] = "更新しました。"
       redirect_to admin_post_path(@post)
     else

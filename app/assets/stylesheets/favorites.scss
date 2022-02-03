@@ -12,3 +12,13 @@
 .favorites_index p {
   margin: 0;
 }
+.favorites_index .label {
+  font-weight: 500;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  line-height: 1;
+  color: #2b00ff;
+  border: solid 1px #2b00ff;
+  text-align: center;
+  border-radius: .25em;
+}
