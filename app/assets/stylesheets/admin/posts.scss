@@ -25,12 +25,14 @@
 
 .admin_post_show .btn_area{
   text-align: end;
-  margin: 0 6% 10px 0;
+  margin: 10px 6% 10px 0;
+}
+.admin_post_show .image {
+  margin-bottom: 10px;
 }
 .admin_post_show .map_and_comment_area {
   margin-top: 50px;
 }
-
 .admin_post_show td {
   border-bottom: dashed 1px #a6a6a6;
 }

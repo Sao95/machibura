@@ -7,7 +7,7 @@
       <%= form_with model: @post,url: admin_post_path(@post), local:true do |f| %>
       <td class="col-md-5">
         <div class="image_area">
-          <%= attachment_image_tag @post, :image, size:"250x200", fallback:"no_image_square.jpg" %>
+          <span class='image'><%= attachment_image_tag @post, :image, size:"250x200", fallback:"no_image_square.jpg" %></span>
           <!--asset_path(no_image_square.jpg)-->
           <%= f.attachment_field :image %>
         </div>
