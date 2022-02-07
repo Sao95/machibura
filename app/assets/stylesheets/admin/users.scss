@@ -18,9 +18,7 @@
   left: -10%;
 }
 
-.admin_users .table {
-  width: 80%;
-}
+// admin/users/index.html.erb
 .search {
   text-align: right;
 }
@@ -28,8 +26,12 @@
   margin-top: 10px;
 }
 
+// admin/users/show.html.erb
 .admin_user_show {
-  margin-left: 3%;
+  margin: 0 5%;
+}
+.admin_user_show .container {
+  margin: 0 3%;
 }
 .admin_user_show .table {
   margin-top: 10px;

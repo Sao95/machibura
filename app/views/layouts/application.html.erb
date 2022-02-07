@@ -18,12 +18,18 @@
       <main>
         <div class="container-fluid">
           <div class="row, application_row">
-            <div class="col-md-3 sidebar">
-              <%= render "layouts/sidebar" %>
-            </div>
-            <div class="col-md-9 main_content">
-              <%= yield %>
-            </div>
+            <% if admin_signed_in? %>
+              <div class="admin_main_content">
+                <%= yield %>
+              </div>
+            <% else %>
+              <div class="col-md-3 sidebar">
+                <%= render "layouts/sidebar" %>
+              </div>
+              <div class="col-md-9 main_content">
+                <%= yield %>
+              </div>
+            <% end %>
           </div>
         </div>
       <%= render "layouts/pagetop" %>

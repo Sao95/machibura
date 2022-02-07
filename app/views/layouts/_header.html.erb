@@ -10,7 +10,6 @@
         <div class="navbar-nav ml-auto ">
         <!--<%# if user_signed_in? %> → devise側で用意しているヘルパー-->
         <% if admin_signed_in? %>
-          <span class="btn"><%= link_to "Home", root_path %></span>
           <span class="btn"><%= link_to "会員一覧", admin_users_path %></span>
           <span class="btn"><%= link_to "投稿一覧", admin_posts_path %></span>
           <span class="btn"><%= link_to "コメント一覧", admin_post_comments_path %></span>

@@ -1,6 +1,6 @@
 <div class="admin_user_show">
   <h4>会員詳細</h4>
-  <div class="containew">
+  <div class="container">
   <div class="notice"><%= notice %></div>
   <div class="error_messages"><%= alert %></div>
     <%= form_with model: @user, url: admin_user_path(@user), local:true do |f| %>
@@ -10,6 +10,7 @@
         <th class="col-2">ユーザー名</th>
         <th class="col-3">メールアドレス</th>
         <th class="col-2">ステータス</th>
+        <th class="col-2"></th>
       </tr>
       <tr>
         <td class="col-2"><%= @user.id %></td>
@@ -25,8 +26,8 @@
           <label><%= f.radio_button :is_deleted?, false, checked: true %>有効</label>
           <label><%= f.radio_button :is_deleted, true %>退会</label>
         </td>
-        <td>
-          <%= f.submit "変更を保存", class: "btn btn-outline-primary btn-sm" %><br>
+       <td class="col-2">
+          <%= f.submit "変更を保存", class: "btn btn-outline-primary btn-sm" %>
           <%= link_to "削除", admin_user_path(@user), method: :delete, class: "btn btn-outline-danger btn-sm" %>
         </td>
       </tr>
