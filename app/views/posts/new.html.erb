@@ -1,23 +1,40 @@
 <div class="new_post">
+  <%= form_with model: @post, local:true do |f| %>
   <div class="text">
-    <h2>投稿フォーム</h2>
-    <%= form_with model: @post, local:true do |f| %>
-      <%= render 'layouts/error_messages', model: f.object %>
-      <p class="space">
-        <h5>画像</h5>
-        <%= f.attachment_field :image %>
-      </p>
-      <p class="space">
-        <h5>住所 / 地名 / 駅名</h5>
-        (例) 東京都千代田区丸の内1丁目 / <br>
-        東京都千代田区丸の内 / 東京駅<br>
-        <%= f.text_field :address, :size=>"23" %>
-      </p>
-      <p class="space">
-        <h5>投稿内容</h5>
-        <%= f.text_area :writings, size:"35x3" %>
-      </p>
-      <p class="text-center"><%= f.submit '投稿' %></div>
-    <% end %>
+    <h4>投稿フォーム</h4>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <p class="space">
+      <h5>画像</h5>
+      <div><%= f.attachment_field :image %></div>
+      <%= attachment_image_tag @post, :image, fallback: "no_image_square.jpg", id: "img_prev", style: "height: 300px; width:400px;" %>
+    </p>
+    <p class="space">
+      <h5>住所 / 地名 / 駅名</h5>
+      (例) 東京都千代田区丸の内1丁目 / 東京都千代田区丸の内 / 東京駅<br>
+      <%= f.text_field :address, :size=>"23", class: 'form-control' %>
+    </p>
+    <p class="space">
+      <h5>投稿内容</h5>
+      <%= f.text_area :writings, size:"35x3", class: 'form-control' %>
+    </p>
   </div>
+  <p class="text-right"><%= f.submit '投稿' %></div>
+  <% end %>
 </div>
+
+<script>
+  $(document).on("turbolinks:load", function(){
+  function readURL(input) {
+    if(input.files && input.files[0]){
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#img_prev').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#post_image").change(function(){
+    readURL(this);
+  });
+});
+</script>

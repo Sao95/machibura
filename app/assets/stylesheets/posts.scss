@@ -5,12 +5,11 @@
 // new.html.erb
 .new_post {
   display: block;
-  text-align: center;
-  margin-right: 30%;
+  width: 80%;
+  padding-left: 10%;
 }
 .new_post .text {
 	text-align: left;
-	display: inline-block;
 }
 .new_post .space {
   margin-bottom: 10px;
