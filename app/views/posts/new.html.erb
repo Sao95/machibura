@@ -10,8 +10,9 @@
     </p>
     <p class="space">
       <h5>住所 / 地名 / 駅名</h5>
-      (例) 東京都千代田区丸の内1丁目 / 東京都千代田区丸の内 / 東京駅<br>
-      <%= f.text_field :address, :size=>"23", class: 'form-control' %>
+      <%= f.select :prefecture, Post.prefectures_i18n.invert, {prompt: "都道府県"} %><br>
+      (例) 千代田区丸の内1丁目 / 千代田区丸の内 / 東京駅<br>
+      <%= f.text_field :place, class: 'form-control' %>
     </p>
     <p class="space">
       <h5>投稿内容</h5>

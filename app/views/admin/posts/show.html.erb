@@ -15,9 +15,10 @@
         <td class="col-md-7">
           投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %><br>
           住所 / 地名 / 駅名：<br>
-          <%= f.text_field :address, :size=>"23" %><br>
+          <div class='space'><%= f.select :prefecture, Post.prefectures_i18n.invert %></div>
+          <div class='space'><%= f.text_field :place, class: 'form-control' %></div>
           投稿文：<br>
-          <%= f.text_area :writings, size:"35x3" %><br>
+          <%= f.text_area :writings, size:"0x3", class: 'form-control' %><br>
           ユーザー：<%= user_name(@post.user) %>
           <div class="tag-box">
             <% @post.tags.each do |tag| %>

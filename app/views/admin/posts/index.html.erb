@@ -20,7 +20,7 @@
     <!--asset_path(no_image_square.jpg)-->
     <div class="col-7">
       投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
-      住所 / 地名 / 駅名：<%= post.address %><br>
+      住所 / 地名 / 駅名：<%= post.prefecture %> <%= post.place %><br>
       投稿文：<%= post.writings.truncate(25) %><br>
       <!--user_name → app/helpers/application_helper.rbに定義している-->
       ユーザー：<%= user_name(post.user) %><br>
