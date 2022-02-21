@@ -22,6 +22,7 @@
       投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %><br>
       住所 / 地名 / 駅名：<%= post.address %><br>
       投稿文：<%= post.writings.truncate(25) %><br>
+      <!--user_name → app/helpers/application_helper.rbに定義している-->
       ユーザー：<%= user_name(post.user) %><br>
       <div class="tag-box">
         <% post.tags.each do |tag| %>
