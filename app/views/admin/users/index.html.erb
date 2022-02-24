@@ -5,7 +5,13 @@
     <div class="row">
       <div class="col-8"></div>
       <%#= f.label :address_or_writings_or_user_name_cont, "Keyword" %>
-      <div class="col-3"><%= f.search_field :name_or_email_or_is_deleted_cont, class: 'form-control', placeholder: '検索ワード', required: true %></div>
+      <div class='col-3 radio_button'>
+        <span>会員ステータス</span>
+        <%= f.radio_button :is_deleted_eq, 'false' %>有効
+        <%= f.radio_button :is_deleted_eq, 'true' %>退会
+      </div>
+      <div class="col-8"></div>
+      <div class="col-3"><%= f.search_field :name_or_email_or_is_deleted_cont, class: 'form-control', placeholder: '検索ワード' %></div>
       <div class="col-1"><%= f.submit '検索', class: 'btn btn-primary' %></div>
     </div>
     <% end %>
