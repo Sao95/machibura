@@ -4,9 +4,13 @@
     <!--search_form_for → ransackが提供するフォームヘルパー-->
     <%= search_form_for @search do |f| %>
       <%#= f.label :address_or_writings_or_user_name_cont, "Keyword" %>
-      <%= f.search_field :address_or_writings_or_user_name_cont, class: 'form-control', placeholder: '検索ワード', required: true %>
+      <%= f.search_field :prefecture_or_place_or_writings_or_user_name_cont, class: 'form-control', placeholder: '検索ワード', required: true %>
+      <!--<div class='prefecture_search'>-->
+      <!--  <%#= f.select :prefecture_eq, Post.prefectures_i18n.invert.map{|key, value| [key, Post.prefectures[value]]}, { include_blank: t('都道府県') }, { class: 'form-control' } %>-->
+      <!--</div>-->
       <%= f.submit '検索', class: 'btn' %>
     <% end %>
+    
   </div>
   
   <div class="row link_btn1">
