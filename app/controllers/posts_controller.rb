@@ -14,12 +14,7 @@ class PostsController < ApplicationController
       @post.user_id = current_user.id
     end
     if @post.save
-      # 投稿した画像をAPI側に渡す
-      tags = Vision.get_image_data(@post.image)
-      # API側から返ってきた値をもとにタグを作成する
-      tags.each do |tag|
-      @post.tags.create(name: tag)
-    end
+      @post.create_tags
       redirect_to posts_path
     else
       render 'new'
@@ -51,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def runking
-    @posts = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
+    @posts = Post.most_favorite
   end
 
   private

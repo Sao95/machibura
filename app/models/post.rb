@@ -18,6 +18,13 @@ class Post < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+  
+  def create_tags
+    # 投稿した画像をAPI側に渡す
+    tag_names = Vision.get_image_data(image)
+    # API側から返ってきた値をもとにタグを作成する
+    tag_names.each { |tag_name| tags.create(name: tag_name) }
+  end
 
   # addressにprefecture,spot_nameカラムを代入
   def address
@@ -39,6 +46,10 @@ class Post < ApplicationRecord
      福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,
      沖縄県:47
   }
+  
+  def self.most_favorite(n = 10)
+    where(id: Favorite.group(:post_id).order('count(post_id) desc').limit(n).pluck(:post_id))
+  end
 
   # ransacker :favorites_count do
   # end
